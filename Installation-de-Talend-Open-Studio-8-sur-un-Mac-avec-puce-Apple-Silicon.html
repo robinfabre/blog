@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<!-- Chrome, Firefox OS and Opera Status Bar Color -->
+<meta name="theme-color" content="#FFFFFF">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css">
+<link rel="stylesheet" type="text/css"
+  href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/themes/prism.min.css">
+<link rel="stylesheet" type="text/css" href="css/SourceSansPro.css">
+<link rel="stylesheet" type="text/css" href="css/theme.css">
+<link rel="stylesheet" type="text/css" href="css/notablog.css">
+<!-- Favicon -->
+
+  <link rel="shortcut icon" href="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbfb3b00b-ef8d-464a-b169-436746190c7c%2Ficons8-home-page-100.png?table=collection&amp;id=43400acf-b977-49a1-bbad-916ca0cad551">
+
+<style>
+  :root {
+    font-size: 20px;
+  }
+</style>
+  <title>Installation de Talend Open Studio 8 sur un Mac avec puce Apple Silicon&nbsp;|&nbsp;Le Blog de Robin F.</title>
+  <meta property="og:type" content="blog">
+  <meta property="og:title" content="Installation de Talend Open Studio 8 sur un Mac avec puce Apple Silicon">
+  
+    <meta name="description" content="Comment installer Talend Open Studio 8 sur un Mac avec puce Silicon">
+    <meta property="og:description" content="Comment installer Talend Open Studio 8 sur un Mac avec puce Silicon">
+  
+  
+    <meta property="og:image" content="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F00e193ed-c86f-4e27-b136-e9f5f813df72%2Ficons8-mac-studio-96.png?table=block&amp;id=baefd21e-6b6a-41fd-b3f9-21a28b88cd34">
+  
+  <style>
+    .DateTagBar {
+      margin-top: 1.0rem;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="Navbar">
+  <a href="index.html">
+    <div class="Navbar__Btn">
+      
+        <span><img class="inline-img-icon" src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbfb3b00b-ef8d-464a-b169-436746190c7c%2Ficons8-home-page-100.png?table=collection&amp;id=43400acf-b977-49a1-bbad-916ca0cad551"></span>&nbsp;
+      
+      <span>Home</span>
+    </div>
+  </a>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <span class="Navbar__Delim">&centerdot;</span>
+      <a href="cv.html">
+        <div class="Navbar__Btn">
+          
+            <span><img class="inline-img-icon" src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fb9ec876c-9408-4df0-b3e0-22cd2072c987%2Ficons8-about-100.png?table=block&amp;id=0405a546-e9c6-49a9-8d6f-6843f2a9d7b9"></span>&nbsp;
+          
+          <span>Curriculum vitæ</span>
+        </div>
+      </a>
+    
+  
+    
+      <span class="Navbar__Delim">&centerdot;</span>
+      <a href="support.html">
+        <div class="Navbar__Btn">
+          
+            <span><img class="inline-img-icon" src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F1e1a86af-88dc-4883-8d5f-6562bd8f6c77%2Ficons8-coffee-to-go-96.png?table=block&amp;id=890569db-5250-4cf5-a730-f306445812aa"></span>&nbsp;
+          
+          <span>Me soutenir</span>
+        </div>
+      </a>
+    
+  
+    
+      <span class="Navbar__Delim">&centerdot;</span>
+      <a href="social.html">
+        <div class="Navbar__Btn">
+          
+            <span><img class="inline-img-icon" src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F474ed768-73ab-4f73-aeac-5753ff3b9622%2Ficons8-social-network-64.png?table=block&amp;id=331630ca-9957-4ecd-acb4-30bafa1eac23"></span>&nbsp;
+          
+          <span>Me retrouver ailleurs</span>
+        </div>
+      </a>
+    
+  
+    
+  
+</nav>
+  <header class="Header">
+    
+    <div class="Header__Spacer Header__Spacer--NoCover">
+    </div>
+    
+      <div class="Header__Icon">
+        <span><img class="inline-img-icon" src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F00e193ed-c86f-4e27-b136-e9f5f813df72%2Ficons8-mac-studio-96.png?table=block&amp;id=baefd21e-6b6a-41fd-b3f9-21a28b88cd34"></span>
+      </div>
+    
+    <h1 class="Header__Title">Installation de Talend Open Studio 8 sur un Mac avec puce Apple Silicon</h1>
+    
+      <div class="DateTagBar">
+        
+          <span class="DateTagBar__Item DateTagBar__Date">Posted on Tue, Dec 27, 2022</span>
+        
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--gray">
+            <a href="tag/Apple.html">Apple</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--brown">
+            <a href="tag/Silicon.html">Silicon</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--red">
+            <a href="tag/M1.html">M1</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--default">
+            <a href="tag/M2.html">M2</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--pink">
+            <a href="tag/Talend.html">Talend</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--green">
+            <a href="tag/Tuto.html">Tuto</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--yellow">
+            <a href="tag/ETL.html">ETL</a>
+          </span>
+        
+      </div>
+    
+  </header>
+  <article id="https://www.notion.so/baefd21e6b6a41fdb3f921a28b88cd34" class="PageRoot"><div id="https://www.notion.so/c2537cb3d64b44bfb8078a968829f7e3" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">La dernière version de Talend n&#x27;est pas optimisée pour les machines Apple Silicon, il faut donc passer par Rosetta pour le faire fonctionner.</span></span></p></div><div id="https://www.notion.so/ee2bafa79f4e4d67a72a1d48ecd85cd4" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Télécharger la dernière version de Talend Open Studio 8 </span><span class="SemanticString"><a class="SemanticString__Fragment SemanticString__Fragment--Link" href="http://mkto-k0023.com/dc/5w4dZQ4HH6-8aj1DCgc3u9vYtrgywd1eUxD2vj1MTEGf_y395O4_4sxM29-hnjTajbtq4_19QZkqnYh-UBjqLh3ViiR4d2qDydzriou3MypwYM4JW7MmszkiIYCHCmrTB6TIktwqJYr3eVNGlo1I4g==/MzQ3LUlBVC02NzcAAAGI7foY6aW8aJAZ3WsIgt5OzKH281zUpI5YTLI4LjrtRyiBOC40LkWT6ava5sY1cDtw9PQQXzc=">ici</a></span></span></p></div><h2 id="https://www.notion.so/1be0ef15937c41da98af824083b8a655" class="ColorfulBlock ColorfulBlock--ColorDefault Heading Heading--2"><a class="Anchor" href="#https://www.notion.so/1be0ef15937c41da98af824083b8a655"><svg width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><span class="SemanticStringArray"><span class="SemanticString">Installer Talend Open Studio.</span></span></h2><div id="https://www.notion.so/d27ee4a461b44dd6895474a21aa4062d" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Montez l&#x27;image </span><span class="SemanticString"><code class="SemanticString__Fragment SemanticString__Fragment--Code">.dmg</code></span><span class="SemanticString">.
+Pour forcer l&#x27;installation de la version X86, ouvrez un terminal et lancez la commande suivante :</span></span></p></div><pre id="https://www.notion.so/828ef3adbe0a47969950b19fb74ec975" class="Code"><code><span class="SemanticStringArray"><span class="SemanticString"><span>/Volumes/Talend\\ Open\\ Studio\\ for\\ Data\\ Inte/TOSDI-8.0.1-osx-installer.app/Contents/MacOS/osx-x86_64
+</span></span></span></code></pre><div id="https://www.notion.so/b474f1f77f6c41338aef0ec609be3280" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Le programme d&#x27;installation devrait s&#x27;ouvrir et vous n&#x27;aurez qu&#x27;à suivre les étapes pour terminer l&#x27;installation.</span></span></p></div><h2 id="https://www.notion.so/6b96dfeef4024635a9aa8da9050bf0fb" class="ColorfulBlock ColorfulBlock--ColorDefault Heading Heading--2"><a class="Anchor" href="#https://www.notion.so/6b96dfeef4024635a9aa8da9050bf0fb"><svg width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><span class="SemanticStringArray"><span class="SemanticString">Installer JDK 11</span></span></h2><div id="https://www.notion.so/0d54a5ae90434b22936408a51eddc6a3" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Télécharger le jdk 11 mais pour processeur X86 et non ARM </span><span class="SemanticString"><a class="SemanticString__Fragment SemanticString__Fragment--Link" href="https://cdn.azul.com/zulu/bin/zulu11.60.19-ca-jdk11.0.17-macosx_x64.dmg">ici</a></span></span></p></div><div id="https://www.notion.so/a16687b549e74585915c4b9f16c430ae" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Installer le normalement et ignorez le message vous recommandant d&#x27;utiliser plutôt la version pour processeur ARM.</span></span></p></div><h2 id="https://www.notion.so/2e4d8f930f5f4927a2026e39dcffe307" class="ColorfulBlock ColorfulBlock--ColorDefault Heading Heading--2"><a class="Anchor" href="#https://www.notion.so/2e4d8f930f5f4927a2026e39dcffe307"><svg width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><span class="SemanticStringArray"><span class="SemanticString">Modifier le fichier Info.plist</span></span></h2><div id="https://www.notion.so/cb786c2edb724697ac65498814c7aa9b" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Une fois l&#x27;installation terminée, on va modifier le fichier plist de Talend pour le forcer à utiliser la JVM que l&#x27;on vient d&#x27;installer.</span></span></p></div><div id="https://www.notion.so/5149a15d7ff14f59a82fa4824ffd5ded" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">En effet, sans cette modification, vous pouvez vous retrouver avec le message d&#x27;erreur suivant à l&#x27;ouverture de Talend :</span></span></p></div><pre id="https://www.notion.so/4d23832d62db42cc9a33cbab8280d834" class="Code"><code><span class="SemanticStringArray"><span class="SemanticString"><span>The JVM shared library &quot;/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home/bin/../lib/server/libjvm.dylib&quot;
+does not contain the JNI_CreateJavaVM symbol.
+</span></span></span></code></pre><div id="https://www.notion.so/44f3889c71894fc0962dfa13cab9b6ce" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Ouvrez donc un terminal et lancez la commande suivante :</span></span></p></div><pre id="https://www.notion.so/5421f91e12054e07857cb57a90e78ca3" class="Code"><code><span class="SemanticStringArray"><span class="SemanticString"><span>/usr/libexec/java_home -V
+</span></span></span></code></pre><div id="https://www.notion.so/db7803e8a8ac4cbc816439456eee13ff" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Cela vous donnera le chemin vers votre jdk qui devrait ressembler à ça :</span></span></p></div><div id="https://www.notion.so/2a0822d2b3764826a9b05694e6d97846" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString"><code class="SemanticString__Fragment SemanticString__Fragment--Code">‌/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home</code></span></span></p></div><div id="https://www.notion.so/93ffc17a200d45edacdd5f5989bb98ac" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Ensuite on se rend dans le dossier d&#x27;installation de Talend</span></span></p></div><div id="https://www.notion.so/bab71c807c0a437da90f6ea3e48bfbbf" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString"><code class="SemanticString__Fragment SemanticString__Fragment--Code">/Applications/TOSDI-8.0.1/studio/TOS_DI-macosx-cocoa.app/Contents</code></span></span></p></div><div id="https://www.notion.so/59d2105fb2b14c4c9efcf967b28d2d9e" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">On édite le fichier Info.plist</span></span></p></div><div id="https://www.notion.so/71f1cdeca7274b219b4bf5cbb92692ab" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Dans la partie du code où se trouve array suivie des balises string on rajoute une ligne sur le même principe avec le contenu suivant :</span></span></p></div><pre id="https://www.notion.so/b9d4f811a8d446379cfba4916ae57b36" class="Code"><code><span class="SemanticStringArray"><span class="SemanticString"><span>&lt;string&gt;-vm&lt;/string&gt;&lt;string&gt;/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home/bin/java&lt;/string&gt;
+</span></span></span></code></pre><div id="https://www.notion.so/583eb3865adf4f22af2f1772009d21d3" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">On sauvegarde le fichier et à partir de là, le studio arrive à se lancer.</span></span></p></div></article>
+  <footer class="Footer">
+  <div>&copy; Le Blog de Robin F. 2022</div>
+  <div>&centerdot;</div>
+  <div>Powered by <a href="https://github.com/dragonman225/notablog" target="_blank"
+      rel="noopener noreferrer">Notablog</a>, <a href="https://icons8.com/" target="_blank"
+      rel="noopener noreferrer">icons8</a>.
+  </div>
+</footer>
+</body>
+
+</html>
