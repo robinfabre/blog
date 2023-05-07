@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<!-- Chrome, Firefox OS and Opera Status Bar Color -->
+<meta name="theme-color" content="#FFFFFF">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css">
+<link rel="stylesheet" type="text/css"
+  href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/themes/prism.min.css">
+<link rel="stylesheet" type="text/css" href="css/SourceSansPro.css">
+<link rel="stylesheet" type="text/css" href="css/theme.css">
+<link rel="stylesheet" type="text/css" href="css/notablog.css">
+<!-- Favicon -->
+
+  <link rel="shortcut icon" href="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbfb3b00b-ef8d-464a-b169-436746190c7c%2Ficons8-home-page-100.png?table=collection&amp;id=43400acf-b977-49a1-bbad-916ca0cad551">
+
+<style>
+  :root {
+    font-size: 20px;
+  }
+</style>
+  <title>Envoyer des ebooks à son Kindle via Calibre&nbsp;|&nbsp;Robin Fabre, le blog</title>
+  <meta property="og:type" content="blog">
+  <meta property="og:title" content="Envoyer des ebooks à son Kindle via Calibre">
+  
+    <meta name="description" content="Comment envoyer des ebooks au Kindle d’Amazon via le logiciel Calibre">
+    <meta property="og:description" content="Comment envoyer des ebooks au Kindle d’Amazon via le logiciel Calibre">
+  
+  
+    <meta property="og:image" content="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe8a07ea7-6db9-4ab3-97fb-e000e42a0c9a%2Ficons8-kindle-80.png?table=block&amp;id=f1ac0a66-0784-4880-8527-84df16298785">
+  
+  <style>
+    .DateTagBar {
+      margin-top: 1.0rem;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="Navbar">
+  <a href="index.html">
+    <div class="Navbar__Btn">
+      
+        <span><img class="inline-img-icon" src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbfb3b00b-ef8d-464a-b169-436746190c7c%2Ficons8-home-page-100.png?table=collection&amp;id=43400acf-b977-49a1-bbad-916ca0cad551"></span>&nbsp;
+      
+      <span>Home</span>
+    </div>
+  </a>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <span class="Navbar__Delim">&centerdot;</span>
+      <a href="about.html">
+        <div class="Navbar__Btn">
+          
+            <span><img class="inline-img-icon" src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fb9ec876c-9408-4df0-b3e0-22cd2072c987%2Ficons8-about-100.png?table=block&amp;id=0405a546-e9c6-49a9-8d6f-6843f2a9d7b9"></span>&nbsp;
+          
+          <span>À propos</span>
+        </div>
+      </a>
+    
+  
+    
+  
+</nav>
+  <header class="Header">
+    
+    <div class="Header__Spacer Header__Spacer--NoCover">
+    </div>
+    
+      <div class="Header__Icon">
+        <span><img class="inline-img-icon" src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe8a07ea7-6db9-4ab3-97fb-e000e42a0c9a%2Ficons8-kindle-80.png?table=block&amp;id=f1ac0a66-0784-4880-8527-84df16298785"></span>
+      </div>
+    
+    <h1 class="Header__Title">Envoyer des ebooks à son Kindle via Calibre</h1>
+    
+      <div class="DateTagBar">
+        
+          <span class="DateTagBar__Item DateTagBar__Date">Posted on Tue, Aug 10, 2021</span>
+        
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--default">
+            <a href="tag/Amazon.html">Amazon</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--blue">
+            <a href="tag/Kindle.html">Kindle</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--gray">
+            <a href="tag/Ebook.html">Ebook</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--pink">
+            <a href="tag/Calibre.html">Calibre</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--green">
+            <a href="tag/Tuto.html">Tuto</a>
+          </span>
+        
+      </div>
+    
+  </header>
+  <article id="https://www.notion.so/f1ac0a6607844880852784df16298785" class="PageRoot"><div id="https://www.notion.so/c3f7faf9777a4f6da315e89c37edfeda" class="Image Image--PageWidth"><figure><a href="#"><img src="#" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div><div id="https://www.notion.so/c59cd1316d17413fbaaa3b5db1b90c72" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Si vous possédez des livres au format ebook, il est possible de vous les envoyer par email sur votre Kindle.</span></span></p></div><div id="https://www.notion.so/f61eea2836224b10864f419458893381" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">L’une des méthodes les plus simples est d’utiliser le logiciel </span><span class="SemanticString"><a class="SemanticString__Fragment SemanticString__Fragment--Link" href="https://calibre-ebook.com/">Calibre</a></span><span class="SemanticString">. </span></span></p></div><h1 id="https://www.notion.so/42140907d2124f3e902011a89079024c" class="ColorfulBlock ColorfulBlock--ColorDefault Heading Heading--1"><a class="Anchor" href="#https://www.notion.so/42140907d2124f3e902011a89079024c"><svg width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><span class="SemanticStringArray"><span class="SemanticString">Configuration du compte Amazon et de Calibre</span></span></h1><div id="https://www.notion.so/169254326d0c4ef58f868e07c8712b4b" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Pour que calibre puisse envoyer vos ebooks au Kindle, il va falloir lui donner les informations suivantes :</span></span></p></div><ul class="BulletedListWrapper"><li id="https://www.notion.so/c81e2567d9cd41f89ce3c7c3ea20cb8b" class="BulletedList"><span class="SemanticStringArray"><span class="SemanticString">l’adresse email du Kindle</span></span></li><li id="https://www.notion.so/2a6a8e3dd9ec4e9784c883e1dc9b68d3" class="BulletedList"><span class="SemanticStringArray"><span class="SemanticString">l’adresse mail et les paramètres de serveur avec lesquels vous allez envoyer vos ebooks.</span></span></li></ul><div id="https://www.notion.so/e5d10f45b4234005b98e588dd70941b5" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Pour trouver l’adresse de votre Kindle, il faut vous rendre sur votre compte Amazon. Une fois dans les paramètres de compte, rendez-vous dans la rubrique </span><span class="SemanticString"><em class="SemanticString__Fragment SemanticString__Fragment--Italic">Contenu numérique et appareils &gt; Contenu et appareils</em></span><span class="SemanticString">.</span></span></p></div><div id="https://www.notion.so/33f2da5701a645c69e75cc5e17284eb4" class="Image Image--PageWidth"><figure><a href="#"><img src="#" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div><div id="https://www.notion.so/e6b5bb0567ff4a5b99e5b5e3445b646e" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Une fois la nouvelle page ouverte, cliquez sur l’onglet </span><span class="SemanticString"><em class="SemanticString__Fragment SemanticString__Fragment--Italic">Paramètres</em></span><span class="SemanticString">, et descendez jusqu’à trouver la rubrique </span><span class="SemanticString"><em class="SemanticString__Fragment SemanticString__Fragment--Italic">Paramètres de documents personnels</em></span><span class="SemanticString">.</span></span></p></div><div id="https://www.notion.so/2469c2cfbedf47e7b964ac56bb8645d9" class="Image Image--PageWidth"><figure><a href="#"><img src="#" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div><div id="https://www.notion.so/6c625203d245455c9a256d3976243da9" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Tout d’abord, on se rend dans la sous-rubrique </span><span class="SemanticString"><em class="SemanticString__Fragment SemanticString__Fragment--Italic">Paramètres d’adresse e-mail Envoyer-vers-Kindle</em></span><span class="SemanticString"> L’appareil dont le nom se termine par — Kindle sera celui sur lequel envoyer les documents. Mettez de côté l’adresse mail qui lui correspond (elle se termine par –@kindle.com). Ensuite on se rend dans la sous-rubrique suivante </span><span class="SemanticString"><em class="SemanticString__Fragment SemanticString__Fragment--Italic">Liste des adresses e-mail approuvées pour l’envoi de documents personnels</em></span><span class="SemanticString">. En bas du tableau, cliquez sur </span><span class="SemanticString"><em class="SemanticString__Fragment SemanticString__Fragment--Italic">Ajouter une nouvelle adresse approuvée</em></span><span class="SemanticString"> et renseignez l’adresse mail que vous allez utiliser pour envoyer vos documents.</span></span></p></div><div id="https://www.notion.so/6f42cc5a296547a6ba5d109d0cfc5b75" class="Image Image--PageWidth"><figure><a href="#"><img src="#" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div><div id="https://www.notion.so/3e36709f361a493c9379325bf1bb7e34" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Nous en avons terminé avec le Amazon. Passons à présent dans Calibre. Après l’avoir téléchargé et installé, ouvrez-le et rendez-vous dans les </span><span class="SemanticString"><em class="SemanticString__Fragment SemanticString__Fragment--Italic">Préférences</em></span><span class="SemanticString">.</span></span></p></div><div id="https://www.notion.so/0e228a25599e4f4fb4fd3f4a34fbced6" class="Image Image--PageWidth"><figure><a href="#"><img src="#" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div><div id="https://www.notion.so/3a88960b1e30469e8e4e0ae64350f37b" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Dans la fenêtre qui s’est ouverte, les paramètres qui nous intéressent se trouvent dans la sous-rubrique </span><span class="SemanticString"><em class="SemanticString__Fragment SemanticString__Fragment--Italic">Partager</em></span><span class="SemanticString"> puis dans </span><span class="SemanticString"><em class="SemanticString__Fragment SemanticString__Fragment--Italic">Partager les livres par courriel</em></span><span class="SemanticString">.</span></span></p></div><div id="https://www.notion.so/9f429be679dc4a3c8f8417f5f01b5dda" class="Image Image--PageWidth"><figure><a href="#"><img src="#" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div><div id="https://www.notion.so/570c8444a25a494ab45ea639f9a86eee" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Dans la nouvelle fenêtre qui s’affiche, on va d’abord commencer par rajouter l’adresse du Kindle. À côté du premier tableau à droite, cliquez sur </span><span class="SemanticString"><em class="SemanticString__Fragment SemanticString__Fragment--Italic">Ajouter une adresse courriel</em></span><span class="SemanticString"> (1) puis renseignez l’adresse de votre Kindle récupéré plus tôt dans le compte Amazon. </span></span></p></div><div id="https://www.notion.so/02c2cbca3f204adfb0ec318d195cf669" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Ensuite, renseignez la rubrique </span><span class="SemanticString"><em class="SemanticString__Fragment SemanticString__Fragment--Italic">Envoyer le courriel de</em></span><span class="SemanticString"> (2) avec l’adresse email que vous allez utiliser pour envoyer vos documents (la même que celle renseignée dans votre compte Amazon dans les adresses approuvées). </span></span></p></div><div id="https://www.notion.so/f794e69670544b41b0f8a15104a6a7ea" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Pour terminer, il va falloir renseigner les paramètres du serveur de messagerie (3). 
+Normalement, ce sont les mêmes que ceux configurés dans votre client mail, il faut juste utiliser les paramètres d’envoi. Une fois ces paramètres rentrés dans Calibre, vous pouvez en vérifier le fonctionnement en cliquant sur </span><span class="SemanticString"><em class="SemanticString__Fragment SemanticString__Fragment--Italic">Tester l’envoi de courriel</em></span><span class="SemanticString"> en bas à droite (4). Si vous vous êtes trompé dans les paramètres du serveur de messagerie, une erreur devrait apparaître.</span></span></p></div><div id="https://www.notion.so/d88f5681b56747ed961158e6dd5d0cb3" class="Image Image--PageWidth"><figure><a href="#"><img src="#" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div><div id="https://www.notion.so/179058c5053747d8960b6d1d34bba14f" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Si le test est concluant, quittez les </span><span class="SemanticString"><em class="SemanticString__Fragment SemanticString__Fragment--Italic">Préférences</em></span><span class="SemanticString"> et retournez dans l’interface principale de Calibre. Glissez/Déposez votre ebook à l’intérieur pour l’importer dans le logiciel. Une fois importé, faites un clic droit sur le livre, allez dans </span><span class="SemanticString"><em class="SemanticString__Fragment SemanticString__Fragment--Italic">Connecter/partager &gt; Envoyer par courriel à</em></span><span class="SemanticString"> </span><span class="SemanticString"><a class="SemanticString__Fragment SemanticString__Fragment--Link" href="mailto:votreAdresseKindle@kindle.com"><em class="SemanticString__Fragment SemanticString__Fragment--Italic">votreAdresseKindle@kindle.com</em></a></span><span class="SemanticString"><em class="SemanticString__Fragment SemanticString__Fragment--Italic">.</em></span><span class="SemanticString"> 
+Il se peut que Calibre vous informe que votre document n’est pas au bon format pour votre Kindle et Calibre vous proposera donc de le convertir : acceptez. Une fois fait, le reste du processus se déroule en arrière-plan. </span></span></p></div><div id="https://www.notion.so/8b2ef41f73fa4f9f8ba88dafee9e6cc5" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Si tout se passe bien, vous devriez voir apparaître votre livre sur votre Kindle quelques minutes plus tard.</span></span></p></div><div id="https://www.notion.so/48057328688f4f34bf987b17650d1309" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"></span></p></div></article>
+  <footer class="Footer">
+  <div>&copy; Robin Fabre, le blog 2022</div>
+  <div>&centerdot;</div>
+  <div>Powered by <a href="https://github.com/dragonman225/notablog" target="_blank"
+      rel="noopener noreferrer">Notablog</a>, <a href="https://icons8.com/" target="_blank"
+      rel="noopener noreferrer">icons8</a>.
+  </div>
+</footer>
+</body>
+
+</html>
