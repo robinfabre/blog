@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<!-- Chrome, Firefox OS and Opera Status Bar Color -->
+<meta name="theme-color" content="#FFFFFF">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css">
+<link rel="stylesheet" type="text/css"
+  href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/themes/prism.min.css">
+<link rel="stylesheet" type="text/css" href="css/SourceSansPro.css">
+<link rel="stylesheet" type="text/css" href="css/theme.css">
+<link rel="stylesheet" type="text/css" href="css/notablog.css">
+<!-- Favicon -->
+
+  <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text text-anchor=%22middle%22 dominant-baseline=%22middle%22 x=%2250%22 y=%2255%22 font-size=%2280%22&gt;📖&lt;/text&gt;&lt;/svg&gt;">
+
+<style>
+  :root {
+    font-size: 20px;
+  }
+</style>
+  <title>Raspberry Pi 4 : réduire le bruit du POE-HAT&nbsp;|&nbsp;Robin Fabre, le blog</title>
+  <meta property="og:type" content="blog">
+  <meta property="og:title" content="Raspberry Pi 4 : réduire le bruit du POE-HAT">
+  
+    <meta name="description" content="Comment réduire le bruit produit par le POE-HAT d’un Raspberry Pi">
+    <meta property="og:description" content="Comment réduire le bruit produit par le POE-HAT d’un Raspberry Pi">
+  
+  
+    <meta property="og:image" content="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F3859900d-c47e-4608-b210-a15673b8d18b%2Fraspberry-pi.png?table=block&amp;id=3bc91a06-92d8-4b4f-8260-e33908d63f3b">
+  
+  <style>
+    .DateTagBar {
+      margin-top: 1.0rem;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="Navbar">
+  <a href="index.html">
+    <div class="Navbar__Btn">
+      
+        <span><img class="inline-img-icon" src="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text text-anchor=%22middle%22 dominant-baseline=%22middle%22 x=%2250%22 y=%2255%22 font-size=%2280%22&gt;📖&lt;/text&gt;&lt;/svg&gt;"></span>&nbsp;
+      
+      <span>Home</span>
+    </div>
+  </a>
+  
+    
+  
+    
+  
+    
+  
+    
+      <span class="Navbar__Delim">&centerdot;</span>
+      <a href="about.html">
+        <div class="Navbar__Btn">
+          
+            <span><img class="inline-img-icon" src="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text text-anchor=%22middle%22 dominant-baseline=%22middle%22 x=%2250%22 y=%2255%22 font-size=%2280%22&gt;/icons/user_gray.svg&lt;/text&gt;&lt;/svg&gt;"></span>&nbsp;
+          
+          <span>À propos</span>
+        </div>
+      </a>
+    
+  
+    
+  
+</nav>
+  <header class="Header">
+    
+    <div class="Header__Spacer Header__Spacer--NoCover">
+    </div>
+    
+      <div class="Header__Icon">
+        <span><img class="inline-img-icon" src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F3859900d-c47e-4608-b210-a15673b8d18b%2Fraspberry-pi.png?table=block&amp;id=3bc91a06-92d8-4b4f-8260-e33908d63f3b"></span>
+      </div>
+    
+    <h1 class="Header__Title">Raspberry Pi 4 : réduire le bruit du POE-HAT</h1>
+    
+      <div class="DateTagBar">
+        
+          <span class="DateTagBar__Item DateTagBar__Date">Posted on Fri, Jan 13, 2023</span>
+        
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--orange">
+            <a href="tag/Raspberry.html">Raspberry</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--pink">
+            <a href="tag/Pi.html">Pi</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--purple">
+            <a href="tag/POE.html">POE</a>
+          </span>
+        
+      </div>
+    
+  </header>
+  <article id="https://www.notion.so/3bc91a0692d84b4f8260e33908d63f3b" class="PageRoot"><div id="https://www.notion.so/f06ad69da7b84da7978cf5cda6e4be98" class="Image Image--Normal"><figure><a href="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2c197f58-6bb6-4b5b-aa6b-87da40762425%2FUntitled.png?width=600&amp;table=block&amp;id=f06ad69d-a7b8-4da7-978c-f5cda6e4be98"><img src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2c197f58-6bb6-4b5b-aa6b-87da40762425%2FUntitled.png?width=600&amp;table=block&amp;id=f06ad69d-a7b8-4da7-978c-f5cda6e4be98" style="width:600px"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div><div id="https://www.notion.so/223f5c1c36d44f3d9a39af00a19e49ce" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"></span></p></div><div id="https://www.notion.so/c40ee1a0ed15431a9926f5259d8fac8d" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Si vous utilisez un Raspberry Pi 4 équipé d&#x27;un POE HAT, vous avez peut-être remarqué que le ventilateur tourne en permanence et peut causer un certain bruit. Heureusement, il est possible de régler la vitesse du ventilateur en fonction de la température de l&#x27;appareil pour réduire ce bruit.</span></span></p></div><h1 id="https://www.notion.so/ff3f03802c7f4d5e9064e28ee6cb56bd" class="ColorfulBlock ColorfulBlock--ColorDefault Heading Heading--1"><a class="Anchor" href="#https://www.notion.so/ff3f03802c7f4d5e9064e28ee6cb56bd"><svg width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><span class="SemanticStringArray"><span class="SemanticString">Etapes :</span></span></h1><div id="https://www.notion.so/68461a369b3e4d7f87d5ef33273ab2e8" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Voici les étapes à suivre pour régler la vitesse du ventilateur du Raspberry Pi 4 POE HAT :</span></span></p></div><ol class="NumberedListWrapper"><li id="https://www.notion.so/207da54c076d4b7385ba378686162cc5" class="NumberedList" value="1"><span class="SemanticStringArray"><span class="SemanticString">Ouvrez un terminal sur votre Raspberry Pi en utilisant le raccourci clavier </span><span class="SemanticString"><code class="SemanticString__Fragment SemanticString__Fragment--Code"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">Ctrl + Alt + T</strong></code></span><span class="SemanticString">.</span></span></li><li id="https://www.notion.so/92e9d223c3dd4486bc917a022d2c4760" class="NumberedList" value="2"><span class="SemanticStringArray"><span class="SemanticString">Utilisez la commande suivante pour ouvrir le fichier de configuration :
+</span><span class="SemanticString"><code class="SemanticString__Fragment SemanticString__Fragment--Code">sudo nano /boot/config.txt</code></span></span></li><li id="https://www.notion.so/49f1383baa57415ebe23dc428b32130e" class="NumberedList" value="3"><span class="SemanticStringArray"><span class="SemanticString">À la fin du fichier, rajoutez les lignes suivantes :</span></span></li></ol><pre id="https://www.notion.so/92476ce2eaf74e42b51ad1eb44c25d44" class="Code"><code><span class="SemanticStringArray"><span class="SemanticString"><span>dtoverlay=rpi-poe
+dtparam=poe_fan_temp0=70000,poe_fan_temp0_hyst=1000
+dtparam=poe_fan_temp1=75000,poe_fan_temp1_hyst=5000
+dtparam=poe_fan_temp2=80000,poe_fan_temp2_hyst=5000
+dtparam=poe_fan_temp3=82000,poe_fan_temp3_hyst=2000
+</span></span></span></code></pre><div id="https://www.notion.so/9b0549d4024944d9bbd8da4e69224fa0" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Ces lignes de commande définissent les températures cibles pour chaque niveau de vitesse du ventilateur. La température cible poe_fan_temp0 est de 70 degrés Celsius avec une hystérésis de 1000, cela signifie que lorsque la température de l&#x27;appareil atteint 70 degrés Celsius, le ventilateur s&#x27;active, et lorsque la température baisse à 69 degrés Celsius, il s&#x27;arrête. Les autres températures cibles sont de 75 degrés, 80 degrés et 82 degrés avec des hystérésis respectives de 5000 et 2000.</span></span></p></div><ol class="NumberedListWrapper"><li id="https://www.notion.so/4aeac6dcb93344d8971fe18d506b8e06" class="NumberedList" value="1"><span class="SemanticStringArray"><span class="SemanticString">Sauvegardez et quittez l&#x27;éditeur nano en utilisant les raccourcis clavier </span><span class="SemanticString"><code class="SemanticString__Fragment SemanticString__Fragment--Code"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">CTRL + X</strong></code></span><span class="SemanticString">, </span><span class="SemanticString"><code class="SemanticString__Fragment SemanticString__Fragment--Code"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">Y</strong></code></span><span class="SemanticString"> puis </span><span class="SemanticString"><code class="SemanticString__Fragment SemanticString__Fragment--Code"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">ENTER</strong></code></span></span></li><li id="https://www.notion.so/59999192142c4bf8a07e6aaca3ccd6d0" class="NumberedList" value="2"><span class="SemanticStringArray"><span class="SemanticString">Redémarrez votre Raspberry Pi en utilisant la commande :
+</span><span class="SemanticString"><code class="SemanticString__Fragment SemanticString__Fragment--Code">sudo reboot</code></span></span></li></ol><h1 id="https://www.notion.so/eb51e29575d84b79b12aa80f5df719e2" class="ColorfulBlock ColorfulBlock--ColorDefault Heading Heading--1"><a class="Anchor" href="#https://www.notion.so/eb51e29575d84b79b12aa80f5df719e2"><svg width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><span class="SemanticStringArray"><span class="SemanticString">Remarque</span></span></h1><div id="https://www.notion.so/35dadf91eb7741abacbeff761d1132b1" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Il est important de noter que la modification de ces paramètres peut entraîner des risques si les températures cibles sont trop élevées. Il est donc important de surveiller régulièrement la température de l&#x27;appareil pour éviter tout risque de surchauffe.</span></span></p></div><div id="https://www.notion.so/20f978c1ebed430791e2622d1c4caf17" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Pour vérifier la température de l&#x27;appareil, vous pouvez utiliser la commande :
+</span><span class="SemanticString"><code class="SemanticString__Fragment SemanticString__Fragment--Code">vcgencmd measure_temp</code></span></span></p></div><h1 id="https://www.notion.so/c70ec258fd7b4813a2ae758c698ecbb9" class="ColorfulBlock ColorfulBlock--ColorDefault Heading Heading--1"><a class="Anchor" href="#https://www.notion.so/c70ec258fd7b4813a2ae758c698ecbb9"><svg width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><span class="SemanticStringArray"><span class="SemanticString">Sources</span></span></h1><div id="https://www.notion.so/dcb53bfdb1414848ad182f9b0ef36ad3" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString"><a class="SemanticString__Fragment SemanticString__Fragment--Link" href="https://forums.raspberrypi.com/viewtopic.php?t=230603#p1692025">PoE HAT - noisy fan - Raspberry Pi Forums</a></span></span></p></div><div id="https://www.notion.so/bc54b7dbc319402ea65f637c2a97cf2e" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"></span></p></div></article>
+  <footer class="Footer">
+  <div>&copy; Robin Fabre, le blog 2022</div>
+  <div>&centerdot;</div>
+  <div>Powered by <a href="https://github.com/dragonman225/notablog" target="_blank"
+      rel="noopener noreferrer">Notablog</a>.
+  </div>
+</footer>
+</body>
+
+</html>
