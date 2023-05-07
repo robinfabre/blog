@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<!-- Chrome, Firefox OS and Opera Status Bar Color -->
+<meta name="theme-color" content="#FFFFFF">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css">
+<link rel="stylesheet" type="text/css"
+  href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/themes/prism.min.css">
+<link rel="stylesheet" type="text/css" href="css/SourceSansPro.css">
+<link rel="stylesheet" type="text/css" href="css/theme.css">
+<link rel="stylesheet" type="text/css" href="css/notablog.css">
+<!-- Favicon -->
+
+  <link rel="shortcut icon" href="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbfb3b00b-ef8d-464a-b169-436746190c7c%2Ficons8-home-page-100.png?table=collection&amp;id=43400acf-b977-49a1-bbad-916ca0cad551">
+
+<style>
+  :root {
+    font-size: 20px;
+  }
+</style>
+  <title>Talend : Création d’un tableau dans un json  &nbsp;|&nbsp;Le Blog de Robin F.</title>
+  <meta property="og:type" content="blog">
+  <meta property="og:title" content="Talend : Création d’un tableau dans un json  ">
+  
+    <meta name="description" content="Comment créer un table dans un json avec l’ETL Talend">
+    <meta property="og:description" content="Comment créer un table dans un json avec l’ETL Talend">
+  
+  
+    <meta property="og:image" content="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fac8b8e6f-88d4-4ed6-9918-6ab75bcab337%2Ficons8-placeholder-thumbnail-json-100.png?table=block&amp;id=faf1fb82-e099-41ff-9a6a-04d5c1eea078">
+  
+  <style>
+    .DateTagBar {
+      margin-top: 1.0rem;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="Navbar">
+  <a href="index.html">
+    <div class="Navbar__Btn">
+      
+        <span><img class="inline-img-icon" src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbfb3b00b-ef8d-464a-b169-436746190c7c%2Ficons8-home-page-100.png?table=collection&amp;id=43400acf-b977-49a1-bbad-916ca0cad551"></span>&nbsp;
+      
+      <span>Home</span>
+    </div>
+  </a>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <span class="Navbar__Delim">&centerdot;</span>
+      <a href="about.html">
+        <div class="Navbar__Btn">
+          
+            <span><img class="inline-img-icon" src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fb9ec876c-9408-4df0-b3e0-22cd2072c987%2Ficons8-about-100.png?table=block&amp;id=0405a546-e9c6-49a9-8d6f-6843f2a9d7b9"></span>&nbsp;
+          
+          <span>À propos</span>
+        </div>
+      </a>
+    
+  
+    
+  
+</nav>
+  <header class="Header">
+    
+    <div class="Header__Spacer Header__Spacer--NoCover">
+    </div>
+    
+      <div class="Header__Icon">
+        <span><img class="inline-img-icon" src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fac8b8e6f-88d4-4ed6-9918-6ab75bcab337%2Ficons8-placeholder-thumbnail-json-100.png?table=block&amp;id=faf1fb82-e099-41ff-9a6a-04d5c1eea078"></span>
+      </div>
+    
+    <h1 class="Header__Title">Talend : Création d’un tableau dans un json  </h1>
+    
+      <div class="DateTagBar">
+        
+          <span class="DateTagBar__Item DateTagBar__Date">Posted on Tue, Nov 14, 2017</span>
+        
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--green">
+            <a href="tag/Tuto.html">Tuto</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--pink">
+            <a href="tag/Talend.html">Talend</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--yellow">
+            <a href="tag/ETL.html">ETL</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--orange">
+            <a href="tag/JSON.html">JSON</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--green">
+            <a href="tag/Array.html">Array</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--default">
+            <a href="tag/API.html">API</a>
+          </span>
+        
+      </div>
+    
+  </header>
+  <article id="https://www.notion.so/faf1fb82e09941ff9a6a04d5c1eea078" class="PageRoot"><div id="https://www.notion.so/50057c3d48714178ba2f3b5d8f368274" class="Image Image--PageWidth"><figure><a href="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F1fdaaebc-0d05-49c0-8133-02585149d754%2Ftalend-json-array-cover.jpeg?width=1280&amp;table=block&amp;id=50057c3d-4871-4178-ba2f-3b5d8f368274"><img src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F1fdaaebc-0d05-49c0-8133-02585149d754%2Ftalend-json-array-cover.jpeg?width=1280&amp;table=block&amp;id=50057c3d-4871-4178-ba2f-3b5d8f368274" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div><div id="https://www.notion.so/7a358912aff74f76853738225f4c6c7e" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Dans ce petit tutoriel Talend, nous allons voir comment créer un tableau dans un JSON</span></span></p></div><h1 id="https://www.notion.so/57a3b7a446cc4a47a872b7835f00463d" class="ColorfulBlock ColorfulBlock--ColorDefault Heading Heading--1"><a class="Anchor" href="#https://www.notion.so/57a3b7a446cc4a47a872b7835f00463d"><svg width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><span class="SemanticStringArray"><span class="SemanticString">Données en entrée</span></span></h1><div id="https://www.notion.so/9250d38d44164cd5b778e440cb0a6a59" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Les données en entrée arrivent sous la forme suivante :</span></span></p></div><div id="https://www.notion.so/a11c42aaf1c945529a9b425bd6052126" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">dossier libelle montant taxe total numero flag 134 lib1 325 24 349 2 flg1 134 lib2 178 13 191 7 flg2</span></span></p></div><h1 id="https://www.notion.so/a9a52feba1354cce8b8aaa4ea4dfaa30" class="ColorfulBlock ColorfulBlock--ColorDefault Heading Heading--1"><a class="Anchor" href="#https://www.notion.so/a9a52feba1354cce8b8aaa4ea4dfaa30"><svg width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><span class="SemanticStringArray"><span class="SemanticString">Données attendues en sortie</span></span></h1><div id="https://www.notion.so/0c159dfe1aa746878d5bf7a15067abe8" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Nous voulons obtenir le JSON suivant :</span></span></p></div><pre id="https://www.notion.so/18784f3ec79f4225be9858c8c6967bdd" class="Code Code--NoWrap"><code><span class="SemanticStringArray"><span class="SemanticString"><span>‌<span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">"libelle"</span><span class="token operator">:</span> <span class="token string">"lib1"</span><span class="token punctuation">,</span>
+    <span class="token property">"montant"</span><span class="token operator">:</span> <span class="token string">" 325"</span><span class="token punctuation">,</span>
+    <span class="token property">"taxe"</span><span class="token operator">:</span> <span class="token string">" 24"</span><span class="token punctuation">,</span>
+    <span class="token property">"total"</span><span class="token operator">:</span> <span class="token string">" 349"</span><span class="token punctuation">,</span>
+    <span class="token property">"numero"</span><span class="token operator">:</span> <span class="token string">" 2"</span><span class="token punctuation">,</span>
+    <span class="token property">"flag"</span><span class="token operator">:</span> <span class="token string">"flag1"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">"libelle"</span><span class="token operator">:</span> <span class="token string">"lib2"</span><span class="token punctuation">,</span>
+    <span class="token property">"montant"</span><span class="token operator">:</span> <span class="token string">" 178"</span><span class="token punctuation">,</span>
+    <span class="token property">"taxe"</span><span class="token operator">:</span> <span class="token string">" 13"</span><span class="token punctuation">,</span>
+    <span class="token property">"total"</span><span class="token operator">:</span> <span class="token string">" 191"</span><span class="token punctuation">,</span>
+    <span class="token property">"numero"</span><span class="token operator">:</span> <span class="token string">" 7"</span><span class="token punctuation">,</span>
+    <span class="token property">"flag"</span><span class="token operator">:</span> <span class="token string">"flag2"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">]</span></span></span></span></code></pre><div id="https://www.notion.so/3d7b1e5f1f044598beaf298fff419785" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"></span></p></div><h1 id="https://www.notion.so/89a516fb6af44e5fa50734d9ae5deeb9" class="ColorfulBlock ColorfulBlock--ColorDefault Heading Heading--1"><a class="Anchor" href="#https://www.notion.so/89a516fb6af44e5fa50734d9ae5deeb9"><svg width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><span class="SemanticStringArray"><span class="SemanticString">Construction du JSON</span></span></h1><div id="https://www.notion.so/238f334f33d2414db3e43a0b1b04798a" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">À la suite du composant des données d’entrée, nous utilisons un </span><span class="SemanticString"><a class="SemanticString__Fragment SemanticString__Fragment--Link" href="https://help.talend.com/reader/tM3os~7PoPzBK28jtBNgCw/50PMKM8mz4A5fAL~FQcLHw">tWriteJsonFields</a></span><span class="SemanticString">. Il faut ensuite cliquer sur « Configurer la structure JSON ». Dans la nouvelle fenêtre, nous ajoutons un attribut au rootTag :</span></span></p></div><div id="https://www.notion.so/9c44150660b040e29ae2687fad557421" class="Image Image--PageWidth"><figure><a href="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ffdc52cdc-dd7f-47fd-b9aa-6832c9301575%2Ftalend_builJSONArray_step1.png?width=1594&amp;table=block&amp;id=9c441506-60b0-40e2-9ae2-687fad557421"><img src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ffdc52cdc-dd7f-47fd-b9aa-6832c9301575%2Ftalend_builJSONArray_step1.png?width=1594&amp;table=block&amp;id=9c441506-60b0-40e2-9ae2-687fad557421" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div><div id="https://www.notion.so/c8b7b37dc5964a0fbd5a01e6fa28c571" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"></span></p></div><div id="https://www.notion.so/05d8296f0a9f4dfca7c898816afc0bbc" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Nous lui donnons le libellé « class »</span></span></p></div><div id="https://www.notion.so/c0fa0422082e47dda40b9a5cc81ca5b3" class="ColumnList"><div id="https://www.notion.so/cc5b314d29404dad9900ecf7843b190c" class="Column" style="width:calc((100% - var(--column-spacing) * 1) * 0.5)"><div id="https://www.notion.so/9135384152fc4fcb906330adcb5a48bb" class="Image Image--PageWidth"><figure><a href="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F9baedde9-581b-4ac8-be3c-b6c21bad31f0%2Ftalend_builJSONArray_step2.png?width=1736&amp;table=block&amp;id=91353841-52fc-4fcb-9063-30adcb5a48bb"><img src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F9baedde9-581b-4ac8-be3c-b6c21bad31f0%2Ftalend_builJSONArray_step2.png?width=1736&amp;table=block&amp;id=91353841-52fc-4fcb-9063-30adcb5a48bb" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div></div><div id="https://www.notion.so/976bac022ba643fb9ea27175b004c043" class="Column" style="width:calc((100% - var(--column-spacing) * 1) * 0.5)"><div id="https://www.notion.so/ac982239fe10413c892a6176f6c6f274" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"></span></p></div></div></div><div id="https://www.notion.so/f6b30995d2724645b19b34c7c1c6fbf9" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Nous ajoutons ensuite la valeur « array » à ce libellé</span></span></p></div><div id="https://www.notion.so/0e50391b88cc40ba87b3e58deea7377b" class="Image Image--Normal"><figure><a href="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F55d68e1b-b40e-402f-b957-df781fe5a797%2Ftalend_builJSONArray_step3.png?width=616&amp;table=block&amp;id=0e50391b-88cc-40ba-87b3-e58deea7377b"><img src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F55d68e1b-b40e-402f-b957-df781fe5a797%2Ftalend_builJSONArray_step3.png?width=616&amp;table=block&amp;id=0e50391b-88cc-40ba-87b3-e58deea7377b" style="width:616px"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div><div id="https://www.notion.so/2345d4a9c847447a9580cd8f101e7a46" class="Image Image--PageWidth"><figure><a href="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F8914704e-bd92-43cd-a011-68cb48eb1f4f%2Ftalend_builJSONArray_step4.png?width=1736&amp;table=block&amp;id=2345d4a9-c847-447a-9580-cd8f101e7a46"><img src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F8914704e-bd92-43cd-a011-68cb48eb1f4f%2Ftalend_builJSONArray_step4.png?width=1736&amp;table=block&amp;id=2345d4a9-c847-447a-9580-cd8f101e7a46" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div><div id="https://www.notion.so/221105cdabd340299695654299667986" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Nous ajoutons ensuite un nouveau sous-élément nommé « element ».</span></span></p></div><div id="https://www.notion.so/1fed762c1a65439d9987b03fc83bf864" class="Image Image--PageWidth"><figure><a href="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F54010582-d47d-4ede-acd2-cdbb78178b2b%2Ftalend_builJSONArray_step5.png?width=1600&amp;table=block&amp;id=1fed762c-1a65-439d-9987-b03fc83bf864"><img src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F54010582-d47d-4ede-acd2-cdbb78178b2b%2Ftalend_builJSONArray_step5.png?width=1600&amp;table=block&amp;id=1fed762c-1a65-439d-9987-b03fc83bf864" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div><div id="https://www.notion.so/cfc3ca4e82d248b1b2c8e60f8c67ddd9" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"></span></p></div><div id="https://www.notion.so/16a294ecf5eb47a2b75eca0c4c057a68" class="Image Image--PageWidth"><figure><a href="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fd14fe59e-bced-42ca-9006-f8ae251300c9%2Ftalend_builJSONArray_step6.png?width=1736&amp;table=block&amp;id=16a294ec-f5eb-47a2-b75e-ca0c4c057a68"><img src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fd14fe59e-bced-42ca-9006-f8ae251300c9%2Ftalend_builJSONArray_step6.png?width=1736&amp;table=block&amp;id=16a294ec-f5eb-47a2-b75e-ca0c4c057a68" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div><div id="https://www.notion.so/cc7d42a34c234efd9922925d29b0fa6e" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">A ce sous-élément, nous ajoutons un nouvel attribut nommé type avec comme valeur par défaut « string ».</span></span></p></div><div id="https://www.notion.so/515066333bd2489882274d982bc6901e" class="Image Image--PageWidth"><figure><a href="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F74ea0a26-59a1-44fd-b537-21ab2879e07e%2F1H1UajO5VCKyXl3_kdgOb3g.gif?width=1280&amp;table=block&amp;id=51506633-3bd2-4898-8227-4d982bc6901e"><img src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F74ea0a26-59a1-44fd-b537-21ab2879e07e%2F1H1UajO5VCKyXl3_kdgOb3g.gif?width=1280&amp;table=block&amp;id=51506633-3bd2-4898-8227-4d982bc6901e" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div><div id="https://www.notion.so/7b8fcb7490c44c288f24834c63cb2efa" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"></span></p></div><h1 id="https://www.notion.so/f214c3323cf64e3e9d1d6e7c2ee190ef" class="ColorfulBlock ColorfulBlock--ColorDefault Heading Heading--1"><a class="Anchor" href="#https://www.notion.so/f214c3323cf64e3e9d1d6e7c2ee190ef"><svg width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><span class="SemanticStringArray"><span class="SemanticString">Finalisation</span></span></h1><div id="https://www.notion.so/558f64ad9e454f54a258571af38a71ff" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Pour terminer la création du tableau, il suffit de prendre l’ensemble des colonnes et de les rajouter comme sous-élément de « element » puis définir ce dernier comme </span><span class="SemanticString"><em class="SemanticString__Fragment SemanticString__Fragment--Italic">Element boucle.</em></span></span></p></div><div id="https://www.notion.so/241abe7c9fd84e1885ad91d7f66941c5" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Ici, nous ne prenons pas la colonne </span><span class="SemanticString"><em class="SemanticString__Fragment SemanticString__Fragment--Italic">dossier</em></span><span class="SemanticString"> car c’est elle qui va ne servir à regrouper les données. Nous allons modifier le schéma et créer la colonne de sortie (ici </span><span class="SemanticString"><em class="SemanticString__Fragment SemanticString__Fragment--Italic">sortie</em></span><span class="SemanticString">). Ensuite dans les options du composant nous allons regrouper les données sur le numéro de dossier. </span></span></p></div><div id="https://www.notion.so/d6aab3c21d5e417b80342c3db069601d" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Pour ce faire, dans le tableau </span><span class="SemanticString"><em class="SemanticString__Fragment SemanticString__Fragment--Italic">Group by</em></span><span class="SemanticString">, nous sélectionnons </span><span class="SemanticString"><em class="SemanticString__Fragment SemanticString__Fragment--Italic">sortie</em></span><span class="SemanticString"> comme </span><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">Colonne de sortie</strong></span><span class="SemanticString"> et </span><span class="SemanticString"><em class="SemanticString__Fragment SemanticString__Fragment--Italic">dossier</em></span><span class="SemanticString"> comme </span><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">Colonne d’entrée</strong></span><span class="SemanticString">. Enfin nous cochons </span><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">Supprimer le nœud racine</strong></span><span class="SemanticString"> pour supprimer la balise rootTag du résultat final. </span></span></p></div><div id="https://www.notion.so/9a86eb07fae543b8b6270a2391089f5d" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Ci-dessous, l’ensemble des étapes :</span></span></p></div><div id="https://www.notion.so/cb0b1a8fd21a43fc8aacab2c170938d2" class="Image Image--PageWidth"><figure><a href="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe2961f90-9f42-4423-90b8-adf07c7d36d5%2F1wzXGNGqfcPN635PIFi6QqQ.gif?width=1274&amp;table=block&amp;id=cb0b1a8f-d21a-43fc-8aac-ab2c170938d2"><img src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe2961f90-9f42-4423-90b8-adf07c7d36d5%2F1wzXGNGqfcPN635PIFi6QqQ.gif?width=1274&amp;table=block&amp;id=cb0b1a8f-d21a-43fc-8aac-ab2c170938d2" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div><div id="https://www.notion.so/5b134fac1bdd4638b561e305fd8e0503" class="Image Image--PageWidth"><figure><a href="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc4801c43-94ca-43bc-9766-33eff4c3fab7%2F1FAEvTHiIYXx7jajaTwTDrw.gif?width=1280&amp;table=block&amp;id=5b134fac-1bdd-4638-b561-e305fd8e0503"><img src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc4801c43-94ca-43bc-9766-33eff4c3fab7%2F1FAEvTHiIYXx7jajaTwTDrw.gif?width=1280&amp;table=block&amp;id=5b134fac-1bdd-4638-b561-e305fd8e0503" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div><div id="https://www.notion.so/3d17543723734180a62f54c09a2f0abd" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Après exécution du job, nous obtenons bien le résultat suivant : </span></span></p></div><pre id="https://www.notion.so/18aa5b073c874b7aa8aa098668bf88af" class="Code Code--NoWrap"><code><span class="SemanticStringArray"><span class="SemanticString"><span>‌<span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">"libelle"</span><span class="token operator">:</span> <span class="token string">"lib1"</span><span class="token punctuation">,</span>
+    <span class="token property">"montant"</span><span class="token operator">:</span> <span class="token string">" 325"</span><span class="token punctuation">,</span>
+    <span class="token property">"taxe"</span><span class="token operator">:</span> <span class="token string">" 24"</span><span class="token punctuation">,</span>
+    <span class="token property">"total"</span><span class="token operator">:</span> <span class="token string">" 349"</span><span class="token punctuation">,</span>
+    <span class="token property">"numero"</span><span class="token operator">:</span> <span class="token string">" 2"</span><span class="token punctuation">,</span>
+    <span class="token property">"flag"</span><span class="token operator">:</span> <span class="token string">"flag1"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">"libelle"</span><span class="token operator">:</span> <span class="token string">"lib2"</span><span class="token punctuation">,</span>
+    <span class="token property">"montant"</span><span class="token operator">:</span> <span class="token string">" 178"</span><span class="token punctuation">,</span>
+    <span class="token property">"taxe"</span><span class="token operator">:</span> <span class="token string">" 13"</span><span class="token punctuation">,</span>
+    <span class="token property">"total"</span><span class="token operator">:</span> <span class="token string">" 191"</span><span class="token punctuation">,</span>
+    <span class="token property">"numero"</span><span class="token operator">:</span> <span class="token string">" 7"</span><span class="token punctuation">,</span>
+    <span class="token property">"flag"</span><span class="token operator">:</span> <span class="token string">"flag2"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">]</span></span></span></span></code></pre><div id="https://www.notion.so/92968f00ae5344c4bf4493a964dc8024" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"></span></p></div></article>
+  <footer class="Footer">
+  <div>&copy; Le Blog de Robin F. 2022</div>
+  <div>&centerdot;</div>
+  <div>Powered by <a href="https://github.com/dragonman225/notablog" target="_blank"
+      rel="noopener noreferrer">Notablog</a>, <a href="https://icons8.com/" target="_blank"
+      rel="noopener noreferrer">icons8</a>.
+  </div>
+</footer>
+</body>
+
+</html>

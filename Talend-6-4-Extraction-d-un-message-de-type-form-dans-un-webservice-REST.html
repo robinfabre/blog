@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<!-- Chrome, Firefox OS and Opera Status Bar Color -->
+<meta name="theme-color" content="#FFFFFF">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css">
+<link rel="stylesheet" type="text/css"
+  href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/themes/prism.min.css">
+<link rel="stylesheet" type="text/css" href="css/SourceSansPro.css">
+<link rel="stylesheet" type="text/css" href="css/theme.css">
+<link rel="stylesheet" type="text/css" href="css/notablog.css">
+<!-- Favicon -->
+
+  <link rel="shortcut icon" href="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbfb3b00b-ef8d-464a-b169-436746190c7c%2Ficons8-home-page-100.png?table=collection&amp;id=43400acf-b977-49a1-bbad-916ca0cad551">
+
+<style>
+  :root {
+    font-size: 20px;
+  }
+</style>
+  <title>Talend 6.4 : Extraction d’un message de type form dans un webservice REST&nbsp;|&nbsp;Le Blog de Robin F.</title>
+  <meta property="og:type" content="blog">
+  <meta property="og:title" content="Talend 6.4 : Extraction d’un message de type form dans un webservice REST">
+  
+    <meta name="description" content="Comment extraire un message de type form en provenant d’un api avec Talend">
+    <meta property="og:description" content="Comment extraire un message de type form en provenant d’un api avec Talend">
+  
+  
+    <meta property="og:image" content="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F8fe1d85a-d4ea-4784-8680-5522dfc69d94%2Ficons8-form-96.png?table=block&amp;id=1aa975d0-556b-41b8-a062-c546baf0ab89">
+  
+  <style>
+    .DateTagBar {
+      margin-top: 1.0rem;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="Navbar">
+  <a href="index.html">
+    <div class="Navbar__Btn">
+      
+        <span><img class="inline-img-icon" src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbfb3b00b-ef8d-464a-b169-436746190c7c%2Ficons8-home-page-100.png?table=collection&amp;id=43400acf-b977-49a1-bbad-916ca0cad551"></span>&nbsp;
+      
+      <span>Home</span>
+    </div>
+  </a>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <span class="Navbar__Delim">&centerdot;</span>
+      <a href="about.html">
+        <div class="Navbar__Btn">
+          
+            <span><img class="inline-img-icon" src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fb9ec876c-9408-4df0-b3e0-22cd2072c987%2Ficons8-about-100.png?table=block&amp;id=0405a546-e9c6-49a9-8d6f-6843f2a9d7b9"></span>&nbsp;
+          
+          <span>À propos</span>
+        </div>
+      </a>
+    
+  
+    
+  
+</nav>
+  <header class="Header">
+    
+    <div class="Header__Spacer Header__Spacer--NoCover">
+    </div>
+    
+      <div class="Header__Icon">
+        <span><img class="inline-img-icon" src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F8fe1d85a-d4ea-4784-8680-5522dfc69d94%2Ficons8-form-96.png?table=block&amp;id=1aa975d0-556b-41b8-a062-c546baf0ab89"></span>
+      </div>
+    
+    <h1 class="Header__Title">Talend 6.4 : Extraction d’un message de type form dans un webservice REST</h1>
+    
+      <div class="DateTagBar">
+        
+          <span class="DateTagBar__Item DateTagBar__Date">Posted on Tue, Sep 18, 2018</span>
+        
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--pink">
+            <a href="tag/Talend.html">Talend</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--yellow">
+            <a href="tag/ETL.html">ETL</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--default">
+            <a href="tag/API.html">API</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--yellow">
+            <a href="tag/REST.html">REST</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--green">
+            <a href="tag/Tuto.html">Tuto</a>
+          </span>
+        
+      </div>
+    
+  </header>
+  <article id="https://www.notion.so/1aa975d0556b41b8a062c546baf0ab89" class="PageRoot"><h1 id="https://www.notion.so/be6d6c5c0a7d4456b3835f03527eb6ab" class="ColorfulBlock ColorfulBlock--ColorDefault Heading Heading--1"><a class="Anchor" href="#https://www.notion.so/be6d6c5c0a7d4456b3835f03527eb6ab"><svg width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><span class="SemanticStringArray"><span class="SemanticString">Objectif</span></span></h1><div id="https://www.notion.so/2928e12a717b4c0aa1a5f45908299a42" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Nous voulons pouvoir extraire les données reçues par notre webservice qui sont de type x-www-form-urlencoded</span></span></p></div><h1 id="https://www.notion.so/8704c21dfe074f8eacc64c11fe96b4da" class="ColorfulBlock ColorfulBlock--ColorDefault Heading Heading--1"><a class="Anchor" href="#https://www.notion.so/8704c21dfe074f8eacc64c11fe96b4da"><svg width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><span class="SemanticStringArray"><span class="SemanticString">Données en entrée</span></span></h1><div id="https://www.notion.so/ca5d2af995ec47eb86c35ab3a300bfa5" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Les données en entrée arrivent sous la forme suivante :</span></span></p></div><pre id="https://www.notion.so/44fc3ed715094a9d800ce7f918aaa246" class="Code Code--NoWrap"><code><span class="SemanticStringArray"><span class="SemanticString"><span>nom=John&amp;prenom=Rambo&amp;age=55</span></span></span></code></pre><h1 id="https://www.notion.so/3055e06402664ff7bd8ec8fa140c49c1" class="ColorfulBlock ColorfulBlock--ColorDefault Heading Heading--1"><a class="Anchor" href="#https://www.notion.so/3055e06402664ff7bd8ec8fa140c49c1"><svg width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><span class="SemanticStringArray"><span class="SemanticString">Construction du point d’entrée</span></span></h1><div id="https://www.notion.so/ee4ad64717a542a18eea345063e9766a" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Vue globale du point d’entrée :</span></span></p></div><div id="https://www.notion.so/e5c857607993413a9b5f086257f40629" class="Image Image--PageWidth"><figure><a href="#"><img src="#" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div><h2 id="https://www.notion.so/d20e9c17019e4544b77bed59c323a98d" class="ColorfulBlock ColorfulBlock--ColorDefault Heading Heading--2"><a class="Anchor" href="#https://www.notion.so/d20e9c17019e4544b77bed59c323a98d"><svg width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><span class="SemanticStringArray"><span class="SemanticString">tRESTRequest :</span></span></h2><div id="https://www.notion.so/8b65d020d2604ab4801f443c4cb53776" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Nous créons pour notre exemple un point d’entrée de type REST. Nous utilisons le composant tRESTRequest avec les paramètres suivants :</span></span></p></div><ul class="BulletedListWrapper"><li id="https://www.notion.so/b865dce272b2441588e91ed77dbf1d9b" class="BulletedList"><span class="SemanticStringArray"><span class="SemanticString">Endpoint REST : “/talend/test”</span></span></li><li id="https://www.notion.so/6024c5ff231341fb9e7ca8d77d905371" class="BulletedList"><span class="SemanticStringArray"><span class="SemanticString">REST API Mapping :</span></span></li><li id="https://www.notion.so/accce5c742544d1c95f546ee5b0ac9a2" class="BulletedList"><span class="SemanticStringArray"><span class="SemanticString">Output Flow : urlForm</span></span></li><li id="https://www.notion.so/921d5d921b3e483da267f98c5610fc8d" class="BulletedList"><span class="SemanticStringArray"><span class="SemanticString">Dans les options, on configure le schéma suivant :</span></span></li></ul><div id="https://www.notion.so/511a33da64a643099ccd7c8498ff3417" class="Image Image--PageWidth"><figure><a href="#"><img src="#" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div><ul class="BulletedListWrapper"><li id="https://www.notion.so/37e135efc84c434b8ca53a8f8f174bb3" class="BulletedList"><span class="SemanticStringArray"><span class="SemanticString">Il ne faut pas oublier de spécifier « form » dans la colonne Commentaire pour l’ensemble des champs à extraire.</span></span></li><li id="https://www.notion.so/5c3cbbf57c3242b49e0e3793c534ee1c" class="BulletedList"><span class="SemanticStringArray"><span class="SemanticString">HTTP Verb : POST</span></span></li><li id="https://www.notion.so/5212fd4c213148448da6cd9042fe68a8" class="BulletedList"><span class="SemanticStringArray"><span class="SemanticString">URI Pattern : “/form”</span></span></li><li id="https://www.notion.so/0283c8c8f24a41fd8a915a67d37496c5" class="BulletedList"><span class="SemanticStringArray"><span class="SemanticString">Consomme : Form</span></span></li><li id="https://www.notion.so/95ae41b472fc489582a47881f7aeb456" class="BulletedList"><span class="SemanticStringArray"><span class="SemanticString">Produit : (pour notre exemple, le WS ne retourne pas de réponse)</span></span></li></ul><div id="https://www.notion.so/2a42e7a13eaa48ddb7b2929e9d5c2c3b" class="Image Image--PageWidth"><figure><a href="#"><img src="#" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div><h2 id="https://www.notion.so/e26e09184e624206ace5f957f719f0c6" class="ColorfulBlock ColorfulBlock--ColorDefault Heading Heading--2"><a class="Anchor" href="#https://www.notion.so/e26e09184e624206ace5f957f719f0c6"><svg width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><span class="SemanticStringArray"><span class="SemanticString">tRunJob</span></span></h2><div id="https://www.notion.so/9534d31aeb1c4b8aba603eb1613641f0" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Pour pouvoir configurer complètement ce composant, nous devons dans un premier temps configurer le job associer.</span></span></p></div><div id="https://www.notion.so/85c7a02c64f444aaadc40ca7d44c290a" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Dans notre exemple, le composant fait appel au job ws001_get_form. Ce dernier est très simpliste est contient les composants suivants :</span></span></p></div><ul class="BulletedListWrapper"><li id="https://www.notion.so/4334a53019784db18df57685be3e7a1e" class="BulletedList"><span class="SemanticStringArray"><span class="SemanticString"><em class="SemanticString__Fragment SemanticString__Fragment--Italic">tFixedFlowInput</em></span><span class="SemanticString"> : pour récupérer les paramètres reçus par le point d’entrée</span></span></li><li id="https://www.notion.so/aeac320e93c14174a27b09d69459012e" class="BulletedList"><span class="SemanticStringArray"><span class="SemanticString"><em class="SemanticString__Fragment SemanticString__Fragment--Italic">tLogRow</em></span><span class="SemanticString"> : pour afficher dans la console les éléments récupérés</span></span></li></ul><div id="https://www.notion.so/e220e00abd45421aa556538d52a6ec38" class="Image Image--PageWidth"><figure><a href="#"><img src="#" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div><h2 id="https://www.notion.so/97e79c56d8fe4680973b249910e71850" class="ColorfulBlock ColorfulBlock--ColorDefault Heading Heading--2"><a class="Anchor" href="#https://www.notion.so/97e79c56d8fe4680973b249910e71850"><svg width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><span class="SemanticStringArray"><span class="SemanticString">Configuration des contextes :</span></span></h2><div id="https://www.notion.so/52dfa2077c3543e58261e82579f6dfb1" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Dans </span><span class="SemanticString"><em class="SemanticString__Fragment SemanticString__Fragment--Italic">ws001_get_form</em></span><span class="SemanticString">, nous devons configurer 3 variables de contextes qui contiendront les valeurs reçues :</span></span></p></div><div id="https://www.notion.so/84f5436dd3494e16bcadbd64393c1676" class="Image Image--PageWidth"><figure><a href="#"><img src="#" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div><div id="https://www.notion.so/bd061d94cc6848d2bd021622eb930d0e" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Ensuite nous pouvons configurer le tFixedFlowInput :</span></span></p></div><ul class="BulletedListWrapper"><li id="https://www.notion.so/3058f6d71af24ed1a0b995bf7abad1af" class="BulletedList"><span class="SemanticStringArray"><span class="SemanticString">Schéma :</span></span></li></ul><div id="https://www.notion.so/900f656d1b0f4f408f818b8daed41ce9" class="Image Image--PageWidth"><figure><a href="#"><img src="#" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div><ul class="BulletedListWrapper"><li id="https://www.notion.so/3153e37842384342b6f836df34bc739a" class="BulletedList"><span class="SemanticStringArray"><span class="SemanticString">Composant :</span></span></li></ul><div id="https://www.notion.so/ba6a8d89e4c540a19f3444a683460951" class="Image Image--PageWidth"><figure><a href="#"><img src="#" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div><ul class="BulletedListWrapper"><li id="https://www.notion.so/2c12c496333c4cddb97d73176891feeb" class="BulletedList"><span class="SemanticStringArray"><span class="SemanticString">Ici, les valeurs des différentes colonnes vont prendre celles des variables de contexte</span></span></li></ul><div id="https://www.notion.so/deed59fa1c3f460aa1c29800702f6efa" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Nous en avons terminé avec </span><span class="SemanticString"><em class="SemanticString__Fragment SemanticString__Fragment--Italic">ws001_get_form</em></span><span class="SemanticString">, nous pouvons donc revenir au tRunJob du point d’entrée.</span></span></p></div><div id="https://www.notion.so/e4e35bf79415498ab81cb7a35717e4b4" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Dans ce dernier, nous pouvons désormais configurer les paramètres :</span></span></p></div><div id="https://www.notion.so/2078a7b2008f4fbbaa9cddc89a5e42bf" class="Image Image--PageWidth"><figure><a href="#"><img src="#" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div><div id="https://www.notion.so/d98e0be126154dc5ba16adc3072946a5" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">On coche Transmettre tout le contexte.</span></span></p></div><div id="https://www.notion.so/0c75aedb07974233bad08834bbc29c76" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Comme nous avons créé les variables de contexte dans ws001_get_form, ces dernières sont désormais accessibles dans le tableau Paramètre de contexte.</span></span></p></div><div id="https://www.notion.so/a366b0c9461549c8b53bfe72f717a83a" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Il nous suffit de les rajouter avec le petit « + » en bas du tableau.</span></span></p></div><div id="https://www.notion.so/07cf7b04419f49b499f4789de97cedf5" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Pour leur valorisation, il nous faut prendre le nom des colonnes présentes dans le flux entrant.</span></span></p></div><div id="https://www.notion.so/e64df3b5e3f9480283c4e55f578d91ef" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Dans notre cas, cela sera :</span></span></p></div><ul class="BulletedListWrapper"><li id="https://www.notion.so/1f1031633d814ad68538d632dd0afaca" class="BulletedList"><span class="SemanticStringArray"><span class="SemanticString">urlForm.nom</span></span></li><li id="https://www.notion.so/ef59cc570b524ee68ba4f1ebdb508998" class="BulletedList"><span class="SemanticStringArray"><span class="SemanticString">urlForm.prenom</span></span></li><li id="https://www.notion.so/18b2db319d3e414c9c1519d5dd1e0e4e" class="BulletedList"><span class="SemanticStringArray"><span class="SemanticString">urlForm.age</span></span></li></ul><div id="https://www.notion.so/56d026dbe6bf48058547962b975aae77" class="Image Image--PageWidth"><figure><a href="#"><img src="#" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div><div id="https://www.notion.so/377ab17f79a54d858e4351a20fd350b8" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Enfin dans Advanced settings, nous cochons </span><span class="SemanticString"><em class="SemanticString__Fragment SemanticString__Fragment--Italic">Propagate the child result to the output schema </em></span><span class="SemanticString">(bonne pratique).</span></span></p></div><h2 id="https://www.notion.so/5974e6042deb41b6a42e401ac8924da9" class="ColorfulBlock ColorfulBlock--ColorDefault Heading Heading--2"><a class="Anchor" href="#https://www.notion.so/5974e6042deb41b6a42e401ac8924da9"><svg width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><span class="SemanticStringArray"><span class="SemanticString">Test du WS</span></span></h2><div id="https://www.notion.so/5988ef7780304c52861886922460eef2" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Nous pouvons à présent exécuter le point d’entrée. Il sera accessible à l’adresse suivante : </span><span class="SemanticString"><a class="SemanticString__Fragment SemanticString__Fragment--Link" href="http://localhost:8090/talend/test/form"><em class="SemanticString__Fragment SemanticString__Fragment--Italic">http://localhost:8090/talend/test/form</em></a></span></span></p></div><div id="https://www.notion.so/d150e710edea4a32a3ae0c9d72e9f389" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Afin de pouvoir lui envoyer notre appel POST de type x-www-form-urlencoded, nous allons utiliser POSTMAN</span></span></p></div><div id="https://www.notion.so/72d7c9d07912435b89e03803ad1d5c23" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Dans ce dernier, nous sélectionnons POST et nous renseignons l’url à droite.</span></span></p></div><div id="https://www.notion.so/9c4121f3911a49d6a2f5bf9247af0e38" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Ensuite, nous nous rendons dans l’onglet Body puis sur x-www-form-urlencoded. Nous renseignons ensuite le tableau KEY/VALUE avec les celles gérées par notre WS :</span></span></p></div><div id="https://www.notion.so/80bb43cb992647f0975c4f53725b346a" class="Image Image--PageWidth"><figure><a href="#"><img src="#" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div><div id="https://www.notion.so/d01df6b4cb364255b165a7678e9a29ce" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Une fois tout configuré, nous pouvons envoyer la requête avec le bouton Send.</span></span></p></div><div id="https://www.notion.so/0c521b3ef4794d6091cacc8c86c7a950" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Si tout est OK, nous aurons Status : 202 Accepted en bas à droite.</span></span></p></div><div id="https://www.notion.so/f86e495d5e0c4cd8b1997ba8c1b7f414" class="Image Image--PageWidth"><figure><a href="#"><img src="#" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div><div id="https://www.notion.so/900e13a222834feb98c6e7f5ee54d3e4" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Dans Talend, nous pouvons voir que ws001_get_form a bien reçu les données grâce à l’affichage du tLogRow :</span></span></p></div><pre id="https://www.notion.so/8bfbed9639cf420bbccc9e21b6a3f8ac" class="Code"><code><span class="SemanticStringArray"><span class="SemanticString"><span>Démarrage du job ws000_point_entree_test a 11:09 28/02/2019.[statistics] connecting to socket on port 3986[statistics] connected[WARN ]: org.eclipse.jetty.server.handler.AbstractHandler - No Server set for org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine$1@78bbaf83.----+------+---.|   tLogRow_1   ||=---+------+--=||nom |prenom|age||=---+------+--=||John|Rambo |55 |&#x27;----+------+---&#x27;</span></span></span></code></pre><div id="https://www.notion.so/bd0cb437bcda4854a4977ed732ee8754" class="Divider"></div><div id="https://www.notion.so/54519121e4ba4a34b792dc3bcfb4af49" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"></span></p></div></article>
+  <footer class="Footer">
+  <div>&copy; Le Blog de Robin F. 2022</div>
+  <div>&centerdot;</div>
+  <div>Powered by <a href="https://github.com/dragonman225/notablog" target="_blank"
+      rel="noopener noreferrer">Notablog</a>, <a href="https://icons8.com/" target="_blank"
+      rel="noopener noreferrer">icons8</a>.
+  </div>
+</footer>
+</body>
+
+</html>

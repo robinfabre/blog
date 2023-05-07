@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<!-- Chrome, Firefox OS and Opera Status Bar Color -->
+<meta name="theme-color" content="#FFFFFF">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css">
+<link rel="stylesheet" type="text/css"
+  href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/themes/prism.min.css">
+<link rel="stylesheet" type="text/css" href="css/SourceSansPro.css">
+<link rel="stylesheet" type="text/css" href="css/theme.css">
+<link rel="stylesheet" type="text/css" href="css/notablog.css">
+<!-- Favicon -->
+
+  <link rel="shortcut icon" href="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbfb3b00b-ef8d-464a-b169-436746190c7c%2Ficons8-home-page-100.png?table=collection&amp;id=43400acf-b977-49a1-bbad-916ca0cad551">
+
+<style>
+  :root {
+    font-size: 20px;
+  }
+</style>
+  <title>Talend : Suppression de champs dans un JSON &nbsp;|&nbsp;Le Blog de Robin F.</title>
+  <meta property="og:type" content="blog">
+  <meta property="og:title" content="Talend : Suppression de champs dans un JSON ">
+  
+    <meta name="description" content="Comment supprimer un champ d’un JSON avec Talend">
+    <meta property="og:description" content="Comment supprimer un champ d’un JSON avec Talend">
+  
+  
+    <meta property="og:image" content="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2ae0d637-a8ca-42a0-9b49-25c88708f4ca%2Ficons8-json-80.png?table=block&amp;id=91b4bdff-5eff-44ac-9313-7a2277d88bdf">
+  
+  <style>
+    .DateTagBar {
+      margin-top: 1.0rem;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="Navbar">
+  <a href="index.html">
+    <div class="Navbar__Btn">
+      
+        <span><img class="inline-img-icon" src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbfb3b00b-ef8d-464a-b169-436746190c7c%2Ficons8-home-page-100.png?table=collection&amp;id=43400acf-b977-49a1-bbad-916ca0cad551"></span>&nbsp;
+      
+      <span>Home</span>
+    </div>
+  </a>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <span class="Navbar__Delim">&centerdot;</span>
+      <a href="about.html">
+        <div class="Navbar__Btn">
+          
+            <span><img class="inline-img-icon" src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fb9ec876c-9408-4df0-b3e0-22cd2072c987%2Ficons8-about-100.png?table=block&amp;id=0405a546-e9c6-49a9-8d6f-6843f2a9d7b9"></span>&nbsp;
+          
+          <span>À propos</span>
+        </div>
+      </a>
+    
+  
+    
+  
+</nav>
+  <header class="Header">
+    
+    <div class="Header__Spacer Header__Spacer--NoCover">
+    </div>
+    
+      <div class="Header__Icon">
+        <span><img class="inline-img-icon" src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2ae0d637-a8ca-42a0-9b49-25c88708f4ca%2Ficons8-json-80.png?table=block&amp;id=91b4bdff-5eff-44ac-9313-7a2277d88bdf"></span>
+      </div>
+    
+    <h1 class="Header__Title">Talend : Suppression de champs dans un JSON </h1>
+    
+      <div class="DateTagBar">
+        
+          <span class="DateTagBar__Item DateTagBar__Date">Posted on Tue, Jul 20, 2021</span>
+        
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--pink">
+            <a href="tag/Talend.html">Talend</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--green">
+            <a href="tag/Tuto.html">Tuto</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--yellow">
+            <a href="tag/ETL.html">ETL</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--orange">
+            <a href="tag/JSON.html">JSON</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--purple">
+            <a href="tag/JAVA.html">JAVA</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--default">
+            <a href="tag/API.html">API</a>
+          </span>
+        
+      </div>
+    
+  </header>
+  <article id="https://www.notion.so/91b4bdff5eff44ac93137a2277d88bdf" class="PageRoot"><div id="https://www.notion.so/23a69dcabdcc4036a17d5302085aef1e" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Supposons que nous avons le JSON suivant :</span></span></p></div><pre id="https://www.notion.so/7396a787053142c9894f65140834c0ba" class="Code"><code><span class="SemanticStringArray"><span class="SemanticString"><span><span class="token punctuation">{</span>
+<span class="token property">"index"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+<span class="token property">"index_start_at"</span><span class="token operator">:</span> <span class="token number">56</span><span class="token punctuation">,</span>
+<span class="token property">"integer"</span><span class="token operator">:</span> <span class="token number">39</span><span class="token punctuation">,</span>
+<span class="token property">"float"</span><span class="token operator">:</span> <span class="token number">15.0812</span><span class="token punctuation">,</span>
+<span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Sheryl"</span><span class="token punctuation">,</span>
+<span class="token property">"surname"</span><span class="token operator">:</span> <span class="token string">"Callahan"</span><span class="token punctuation">,</span>
+<span class="token property">"fullname"</span><span class="token operator">:</span> <span class="token string">"Pauline Glass"</span><span class="token punctuation">,</span>
+<span class="token property">"email"</span><span class="token operator">:</span> <span class="token string">"cheryl@knowles.bv"</span><span class="token punctuation">,</span>
+<span class="token property">"bool"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span></span></span></span></code></pre><div id="https://www.notion.so/bf14d1c32668495eb92f192b1298c130" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Nous voulons supprimer les champs index et bool</span></span></p></div><div id="https://www.notion.so/2bf89b6798d249dc81669904c92be510" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">On enregistre le json d’origine dans une string</span></span></p></div><pre id="https://www.notion.so/4715494def5d46ffbee7aac9188b6fa3" class="Code"><code><span class="SemanticStringArray"><span class="SemanticString"><span><span class="token class-name">String</span> jsonStringBefore <span class="token operator">=</span> "<span class="token punctuation">{</span>\"index\"<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span>\"index_start_at\"<span class="token operator">:</span><span class="token number">56</span><span class="token punctuation">,</span>\"integer\"<span class="token operator">:</span><span class="token number">39</span><span class="token punctuation">,</span>\"<span class="token keyword">float</span>\"<span class="token operator">:</span><span class="token number">15.0812</span><span class="token punctuation">,</span>\"name\"<span class="token operator">:</span>\"
+<span class="token class-name">Sheryl</span>\"<span class="token punctuation">,</span>\"surname\"<span class="token operator">:</span>\"<span class="token class-name">Callahan</span>\"<span class="token punctuation">,</span>\"fullname\"<span class="token operator">:</span>\"<span class="token class-name">Pauline</span> <span class="token class-name">Glass</span>\"<span class="token punctuation">,</span>\"email\"<span class="token operator">:</span>\"cheryl<span class="token annotation punctuation">@knowles.bv</span>\"<span class="token punctuation">,</span>\"bool\"<span class="token operator">:</span>
+<span class="token boolean">true</span><span class="token punctuation">}</span>"<span class="token punctuation">;</span></span></span></span></code></pre><div id="https://www.notion.so/b37252facc1443aaa71117acb6d10d78" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">On utilise la librairie org.json.</span></span></p></div><div id="https://www.notion.so/4d5c794c64a84596a74179d61714a0b7" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">On crée un objet json :</span></span></p></div><pre id="https://www.notion.so/6bd8a607a69a4578926e8601a9809b8f" class="Code"><code><span class="SemanticStringArray"><span class="SemanticString"><span><span class="token class-name"><span class="token namespace">org<span class="token punctuation">.</span>json<span class="token punctuation">.</span></span>JSONObject</span> jsonObj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name"><span class="token namespace">org<span class="token punctuation">.</span>json<span class="token punctuation">.</span></span>JSONObject</span><span class="token punctuation">(</span>jsonString<span class="token punctuation">)</span><span class="token punctuation">;</span></span></span></span></code></pre><div id="https://www.notion.so/ee676022c4244f799d2b80501bafa8a0" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">On supprime les champs souhaités :</span></span></p></div><pre id="https://www.notion.so/62b1de483be748dcba8fba4f0333d763" class="Code"><code><span class="SemanticStringArray"><span class="SemanticString"><span>jsonObj<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string">"index"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+jsonObj<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string">"bool"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></span></span></code></pre><div id="https://www.notion.so/b5747102085949dbb23c92320ab6730f" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">On enregistre le nouveau JSON dans une nouvelle string :</span></span></p></div><pre id="https://www.notion.so/5830a93df1294d1b8445a8da88173011" class="Code"><code><span class="SemanticStringArray"><span class="SemanticString"><span><span class="token class-name">String</span> jsonStringAfter <span class="token operator">=</span> <span class="token string">""</span><span class="token operator">+</span>jsonObj<span class="token punctuation">;</span></span></span></span></code></pre><div id="https://www.notion.so/bbc7c6a2dacb4c91a533e63aeca4fe93" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Au final nous obtenons dans jsonStringAfter :</span></span></p></div><pre id="https://www.notion.so/119b7bcb6059475b861a019543486f89" class="Code"><code><span class="SemanticStringArray"><span class="SemanticString"><span><span class="token punctuation">{</span>
+<span class="token property">"index_start_at"</span><span class="token operator">:</span> <span class="token number">56</span><span class="token punctuation">,</span>
+<span class="token property">"integer"</span><span class="token operator">:</span> <span class="token number">39</span><span class="token punctuation">,</span>
+<span class="token property">"float"</span><span class="token operator">:</span> <span class="token number">15.0812</span><span class="token punctuation">,</span>
+<span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Sheryl"</span><span class="token punctuation">,</span>
+<span class="token property">"surname"</span><span class="token operator">:</span> <span class="token string">"Callahan"</span><span class="token punctuation">,</span>
+<span class="token property">"fullname"</span><span class="token operator">:</span> <span class="token string">"Pauline Glass"</span><span class="token punctuation">,</span>
+<span class="token property">"email"</span><span class="token operator">:</span> <span class="token string">"cheryl@knowles.bv"</span>
+<span class="token punctuation">}</span></span></span></span></code></pre><div id="https://www.notion.so/455babe6a2544514b3324babef5d4311" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Voici un export d’un petit job d’exemple créé sous Talend 7.3.1 :</span></span></p></div><div id="https://www.notion.so/2ccf50bc024d42ad8baa4969b76985b4" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString"><a class="SemanticString__Fragment SemanticString__Fragment--Link" href="https://res.craft.do/user/full/5bd974c0-ffb4-0000-4dfe-92e57bd276ab/doc/E71ED23F-FFAA-4F5C-8425-DEF106665A91/D4EB7FCE-4DC8-4672-9262-1D16075E9FA9_2/delete-json-fields.zip">delete-json-fields.zip</a></span></span></p></div></article>
+  <footer class="Footer">
+  <div>&copy; Le Blog de Robin F. 2022</div>
+  <div>&centerdot;</div>
+  <div>Powered by <a href="https://github.com/dragonman225/notablog" target="_blank"
+      rel="noopener noreferrer">Notablog</a>, <a href="https://icons8.com/" target="_blank"
+      rel="noopener noreferrer">icons8</a>.
+  </div>
+</footer>
+</body>
+
+</html>
