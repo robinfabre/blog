@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-151039022-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-151039022-1');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<!-- Chrome, Firefox OS and Opera Status Bar Color -->
+<meta name="theme-color" content="#FFFFFF">
+<meta name="google-site-verification" content="HhtuZBhPn1_ecmzPGbi3bTJXgC_c8WuAPqxkwsa3_IU" />
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css">
+<link rel="stylesheet" type="text/css"
+  href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/themes/prism.min.css">
+<link rel="stylesheet" type="text/css" href="css/SourceSansPro.css">
+<link rel="stylesheet" type="text/css" href="css/theme.css">
+<link rel="stylesheet" type="text/css" href="css/notablog.css">
+<!-- Favicon -->
+
+  <link rel="shortcut icon" href="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbfb3b00b-ef8d-464a-b169-436746190c7c%2Ficons8-home-page-100.png?table=collection&amp;id=43400acf-b977-49a1-bbad-916ca0cad551">
+
+<style>
+  :root {
+    font-size: 20px;
+  }
+</style>
+  <title>Contrôler l’écran et le son de vos moniteurs externes sur macOS avec MonitorControl&nbsp;|&nbsp;Le Blog de Robin F.</title>
+  <meta property="og:type" content="blog">
+  <meta property="og:title" content="Contrôler l’écran et le son de vos moniteurs externes sur macOS avec MonitorControl">
+  
+    <meta name="description" content="Contrôler l’écran et le son de vos moniteurs externes sur macOS avec MonitorControl">
+    <meta property="og:description" content="Contrôler l’écran et le son de vos moniteurs externes sur macOS avec MonitorControl">
+  
+  
+    <meta property="og:image" content="https://www.notion.so/signed/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F1f5f4850-63f2-4f5e-b486-960e6baf361f%2Fbe21829c-cbf5-49f7-84ce-7e7dbd872460%2Ficons8-monitor-64.png?table=block&amp;id=14ec0df1-c6cf-80cb-a435-ff2784e321c4">
+  
+  <style>
+    .DateTagBar {
+      margin-top: 1.0rem;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="Navbar">
+  <a href="index.html">
+    <div class="Navbar__Btn">
+      
+        <span><img class="inline-img-icon" src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbfb3b00b-ef8d-464a-b169-436746190c7c%2Ficons8-home-page-100.png?table=collection&amp;id=43400acf-b977-49a1-bbad-916ca0cad551"></span>&nbsp;
+      
+      <span>Home</span>
+    </div>
+  </a>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <span class="Navbar__Delim">&centerdot;</span>
+      <a href="cv.html">
+        <div class="Navbar__Btn">
+          
+            <span><img class="inline-img-icon" src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fb9ec876c-9408-4df0-b3e0-22cd2072c987%2Ficons8-about-100.png?table=block&amp;id=0405a546-e9c6-49a9-8d6f-6843f2a9d7b9"></span>&nbsp;
+          
+          <span>Curriculum vitæ</span>
+        </div>
+      </a>
+    
+  
+    
+      <span class="Navbar__Delim">&centerdot;</span>
+      <a href="support.html">
+        <div class="Navbar__Btn">
+          
+            <span><img class="inline-img-icon" src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F1e1a86af-88dc-4883-8d5f-6562bd8f6c77%2Ficons8-coffee-to-go-96.png?table=block&amp;id=890569db-5250-4cf5-a730-f306445812aa"></span>&nbsp;
+          
+          <span>Me soutenir</span>
+        </div>
+      </a>
+    
+  
+    
+      <span class="Navbar__Delim">&centerdot;</span>
+      <a href="social.html">
+        <div class="Navbar__Btn">
+          
+            <span><img class="inline-img-icon" src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F474ed768-73ab-4f73-aeac-5753ff3b9622%2Ficons8-social-network-64.png?table=block&amp;id=331630ca-9957-4ecd-acb4-30bafa1eac23"></span>&nbsp;
+          
+          <span>Me retrouver ailleurs</span>
+        </div>
+      </a>
+    
+  
+    
+  
+</nav>
+  <header class="Header">
+    
+    <div class="Header__Spacer Header__Spacer--NoCover">
+    </div>
+    
+      <div class="Header__Icon">
+        <span><img class="inline-img-icon" src="https://www.notion.so/signed/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F1f5f4850-63f2-4f5e-b486-960e6baf361f%2Fbe21829c-cbf5-49f7-84ce-7e7dbd872460%2Ficons8-monitor-64.png?table=block&amp;id=14ec0df1-c6cf-80cb-a435-ff2784e321c4"></span>
+      </div>
+    
+    <h1 class="Header__Title">Contrôler l’écran et le son de vos moniteurs externes sur macOS avec MonitorControl</h1>
+    
+      <div class="DateTagBar">
+        
+          <span class="DateTagBar__Item DateTagBar__Date">Posted on Sat, Nov 30, 2024</span>
+        
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--green">
+            <a href="tag/Tuto.html">Tuto</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--gray">
+            <a href="tag/Apple.html">Apple</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--brown">
+            <a href="tag/Silicon.html">Silicon</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--yellow">
+            <a href="tag/macOS.html">macOS</a>
+          </span>
+        
+      </div>
+    
+  </header>
+  <article id="https://www.notion.so/14ec0df1c6cf80cba435ff2784e321c4" class="PageRoot"><h1 id="https://www.notion.so/14ec0df1c6cf80a59658dffeac76cd09" class="ColorfulBlock ColorfulBlock--ColorDefault Heading Heading--1"><a class="Anchor" href="#https://www.notion.so/14ec0df1c6cf80a59658dffeac76cd09"><svg width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><span class="SemanticStringArray"><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">Introduction</strong></span></span></h1><div id="https://www.notion.so/14ec0df1c6cf80f5854aed43deb57e30" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Si vous utilisez un écran externe sur macOS, vous avez probablement rencontré la difficulté de régler la luminosité ou le volume via les réglages natifs. </span><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">MonitorControl</strong></span><span class="SemanticString"> est une solution open-source qui permet de contrôler facilement ces paramètres pour tous vos écrans externes directement depuis la barre de menu.</span></span></p></div><h1 id="https://www.notion.so/14ec0df1c6cf806695eaf4ca152b275b" class="ColorfulBlock ColorfulBlock--ColorDefault Heading Heading--1"><a class="Anchor" href="#https://www.notion.so/14ec0df1c6cf806695eaf4ca152b275b"><svg width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><span class="SemanticStringArray"><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">Fonctionnalités</strong></span></span></h1><div id="https://www.notion.so/14ec0df1c6cf805e8c4bc5cf4c3bb638" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">MonitorControl offre plusieurs fonctionnalités utiles :</span></span></p></div><div id="https://www.notion.so/14ec0df1c6cf805cacb3f6ee834b1506" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">•	</span><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">Luminosité</strong></span><span class="SemanticString"> : Ajustez la luminosité de votre écran externe comme vous le feriez sur un écran Apple.</span></span></p></div><div id="https://www.notion.so/14ec0df1c6cf809ba365c2bf290a7d34" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">•	</span><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">Volume</strong></span><span class="SemanticString"> : Réglez le volume de votre moniteur, une fonctionnalité souvent absente sur macOS pour les écrans non-Apple.</span></span></p></div><div id="https://www.notion.so/14ec0df1c6cf804d924afa7bfbf56713" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">•	</span><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">Température des couleurs</strong></span><span class="SemanticString"> : Modifiez la température des couleurs de l’écran (si pris en charge).</span></span></p></div><div id="https://www.notion.so/14ec0df1c6cf80f3bf0dd9891bf4c55d" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">L’application est compatible avec de nombreux modèles d’écrans externes, y compris ceux de marques autres qu’Apple, ce qui en fait une option idéale pour les utilisateurs disposant de plusieurs écrans.</span></span></p></div><h1 id="https://www.notion.so/14ec0df1c6cf80ebb45bdea6c2ade86c" class="ColorfulBlock ColorfulBlock--ColorDefault Heading Heading--1"><a class="Anchor" href="#https://www.notion.so/14ec0df1c6cf80ebb45bdea6c2ade86c"><svg width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><span class="SemanticStringArray"><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">Installation et configuration</strong></span></span></h1><div id="https://www.notion.so/14ec0df1c6cf80d99533fd4783c1840e" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">L’installation de MonitorControl est simple :</span></span></p></div><div id="https://www.notion.so/14ec0df1c6cf80c18409d7ff58a6f2d1" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">1.	</span><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">Téléchargez l’application</strong></span><span class="SemanticString"> depuis </span><span class="SemanticString"><a class="SemanticString__Fragment SemanticString__Fragment--Link" href="https://github.com/MonitorControl/MonitorControl/releases">GitHub</a></span><span class="SemanticString">.</span></span></p></div><div id="https://www.notion.so/14ec0df1c6cf8086a5c8fadcf542985f" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">2.	</span><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">Installez-la</strong></span><span class="SemanticString"> en faisant glisser l’application dans le dossier Applications.</span></span></p></div><div id="https://www.notion.so/14ec0df1c6cf80509595ffd2d8282d85" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">3.	</span><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">Lancez l’application</strong></span><span class="SemanticString"> et accordez les autorisations nécessaires pour permettre à MonitorControl d’agir sur vos écrans externes.</span></span></p></div><div id="https://www.notion.so/14ec0df1c6cf8055a57fddcff0274ef7" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">4.	</span><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">Personnalisez votre expérience</strong></span><span class="SemanticString"> depuis la barre de menu en ajustant la luminosité, le volume et la température des couleurs.</span></span></p></div><div id="https://www.notion.so/14ec0df1c6cf80cf8a1de6874d97b955" class="Image Image--PageWidth"><figure><a href="https://www.notion.so/signed/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F1f5f4850-63f2-4f5e-b486-960e6baf361f%2F5ec98840-4d7b-498f-aa20-2b7d1dd13dfe%2FCleanShot_2024-11-30_at_19.08.43.gif?width=1188.984375&amp;table=block&amp;id=14ec0df1-c6cf-80cf-8a1d-e6874d97b955"><img src="https://www.notion.so/signed/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F1f5f4850-63f2-4f5e-b486-960e6baf361f%2F5ec98840-4d7b-498f-aa20-2b7d1dd13dfe%2FCleanShot_2024-11-30_at_19.08.43.gif?width=1188.984375&amp;table=block&amp;id=14ec0df1-c6cf-80cf-8a1d-e6874d97b955" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div><h1 id="https://www.notion.so/14ec0df1c6cf80659a8af56c26d5044e" class="ColorfulBlock ColorfulBlock--ColorDefault Heading Heading--1"><a class="Anchor" href="#https://www.notion.so/14ec0df1c6cf80659a8af56c26d5044e"><svg width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><span class="SemanticStringArray"><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">Options avancées</strong></span></span></h1><div id="https://www.notion.so/14ec0df1c6cf80a4ac1bf1ff62a2e39c" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">MonitorControl permet également de lier les touches de réglage de luminosité de votre clavier à tous vos écrans externes et offre la possibilité de synchroniser la luminosité avec les moniteurs Apple, améliorant ainsi l’expérience d’utilisation pour les utilisateurs de configurations multiples.</span></span></p></div><div id="https://www.notion.so/14ec0df1c6cf801db3b5c4b9673b6498" class="ColumnList"><div id="https://www.notion.so/14ec0df1c6cf80ceb999ce125fdef98a" class="Column" style="width:calc((100% - var(--column-spacing) * 1) * 0.5)"><div id="https://www.notion.so/14ec0df1c6cf8090886dce2adec67a00" class="Image Image--PageWidth"><figure><a href="https://www.notion.so/signed/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F1f5f4850-63f2-4f5e-b486-960e6baf361f%2F03f871af-8b62-42c0-848f-18575c9bced2%2FCleanShot_2024-11-30_at_19.14.03.png?width=720&amp;table=block&amp;id=14ec0df1-c6cf-8090-886d-ce2adec67a00"><img src="https://www.notion.so/signed/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F1f5f4850-63f2-4f5e-b486-960e6baf361f%2F03f871af-8b62-42c0-848f-18575c9bced2%2FCleanShot_2024-11-30_at_19.14.03.png?width=720&amp;table=block&amp;id=14ec0df1-c6cf-8090-886d-ce2adec67a00" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div></div><div id="https://www.notion.so/14ec0df1c6cf80a9bfa6ffe61693991b" class="Column" style="width:calc((100% - var(--column-spacing) * 1) * 0.5)"><div id="https://www.notion.so/14ec0df1c6cf8019b8c9f4e0c6b66ce8" class="Image Image--PageWidth"><figure><a href="https://www.notion.so/signed/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F1f5f4850-63f2-4f5e-b486-960e6baf361f%2Fa1efac9d-2bb9-463f-9bce-3a2edf292810%2FCleanShot_2024-11-30_at_19.13.49.png?width=528&amp;table=block&amp;id=14ec0df1-c6cf-8019-b8c9-f4e0c6b66ce8"><img src="https://www.notion.so/signed/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F1f5f4850-63f2-4f5e-b486-960e6baf361f%2Fa1efac9d-2bb9-463f-9bce-3a2edf292810%2FCleanShot_2024-11-30_at_19.13.49.png?width=528&amp;table=block&amp;id=14ec0df1-c6cf-8019-b8c9-f4e0c6b66ce8" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div></div></div><div id="https://www.notion.so/14ec0df1c6cf808f818fc9bd4f7f36bb" class="ColumnList"><div id="https://www.notion.so/14ec0df1c6cf8055a964e0f66ca1f0dc" class="Column" style="width:calc((100% - var(--column-spacing) * 1) * 0.5)"><div id="https://www.notion.so/14ec0df1c6cf802f995cfd8642fa7563" class="Image Image--PageWidth"><figure><a href="https://www.notion.so/signed/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F1f5f4850-63f2-4f5e-b486-960e6baf361f%2Fe8df5ede-961d-4713-90c4-798a42c0bc83%2FCleanShot_2024-11-30_at_19.14.23.png?width=571.484375&amp;table=block&amp;id=14ec0df1-c6cf-802f-995c-fd8642fa7563"><img src="https://www.notion.so/signed/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F1f5f4850-63f2-4f5e-b486-960e6baf361f%2Fe8df5ede-961d-4713-90c4-798a42c0bc83%2FCleanShot_2024-11-30_at_19.14.23.png?width=571.484375&amp;table=block&amp;id=14ec0df1-c6cf-802f-995c-fd8642fa7563" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div></div><div id="https://www.notion.so/14ec0df1c6cf80f3bb22e3615c5f31b0" class="Column" style="width:calc((100% - var(--column-spacing) * 1) * 0.5)"><div id="https://www.notion.so/14ec0df1c6cf80bc90b6efd5b3ef34a1" class="Image Image--PageWidth"><figure><a href="https://www.notion.so/signed/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F1f5f4850-63f2-4f5e-b486-960e6baf361f%2F0795857d-0ab5-4ebd-bcc5-fdbbf882c57a%2FCleanShot_2024-11-30_at_19.14.31.png?width=571.484375&amp;table=block&amp;id=14ec0df1-c6cf-80bc-90b6-efd5b3ef34a1"><img src="https://www.notion.so/signed/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F1f5f4850-63f2-4f5e-b486-960e6baf361f%2F0795857d-0ab5-4ebd-bcc5-fdbbf882c57a%2FCleanShot_2024-11-30_at_19.14.31.png?width=571.484375&amp;table=block&amp;id=14ec0df1-c6cf-80bc-90b6-efd5b3ef34a1" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div></div></div><h1 id="https://www.notion.so/14ec0df1c6cf802992cdf36dfdf868a5" class="ColorfulBlock ColorfulBlock--ColorDefault Heading Heading--1"><a class="Anchor" href="#https://www.notion.so/14ec0df1c6cf802992cdf36dfdf868a5"><svg width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><span class="SemanticStringArray"><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">Conclusion</strong></span></span></h1><div id="https://www.notion.so/14ec0df1c6cf80adb5d7db35eb11abcb" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Si vous travaillez régulièrement avec des écrans externes, </span><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">MonitorControl</strong></span><span class="SemanticString"> est un must-have pour personnaliser vos réglages d’affichage et de son. Simple à installer et efficace, il transforme l’expérience d’utilisation de macOS avec des moniteurs non-Apple.</span></span></p></div></article>
+  <footer class="Footer">
+  <div>&copy; Le Blog de Robin F. 2022</div>
+  <div>&centerdot;</div>
+  <div>Powered by <a href="https://github.com/dragonman225/notablog" target="_blank"
+      rel="noopener noreferrer">Notablog</a>, <a href="https://icons8.com/" target="_blank"
+      rel="noopener noreferrer">icons8</a>.
+  </div>
+</footer>
+</body>
+
+</html>
