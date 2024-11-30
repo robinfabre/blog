@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-151039022-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-151039022-1');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<!-- Chrome, Firefox OS and Opera Status Bar Color -->
+<meta name="theme-color" content="#FFFFFF">
+<meta name="google-site-verification" content="HhtuZBhPn1_ecmzPGbi3bTJXgC_c8WuAPqxkwsa3_IU" />
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css">
+<link rel="stylesheet" type="text/css"
+  href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/themes/prism.min.css">
+<link rel="stylesheet" type="text/css" href="css/SourceSansPro.css">
+<link rel="stylesheet" type="text/css" href="css/theme.css">
+<link rel="stylesheet" type="text/css" href="css/notablog.css">
+<!-- Favicon -->
+
+  <link rel="shortcut icon" href="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbfb3b00b-ef8d-464a-b169-436746190c7c%2Ficons8-home-page-100.png?table=collection&amp;id=43400acf-b977-49a1-bbad-916ca0cad551">
+
+<style>
+  :root {
+    font-size: 20px;
+  }
+</style>
+  <title>Créer une clé USB Bootable de Windows sur Mac&nbsp;|&nbsp;Le Blog de Robin F.</title>
+  <meta property="og:type" content="blog">
+  <meta property="og:title" content="Créer une clé USB Bootable de Windows sur Mac">
+  
+    <meta name="description" content="Créer une clé USB Bootable de windows sur mac">
+    <meta property="og:description" content="Créer une clé USB Bootable de windows sur mac">
+  
+  
+    <meta property="og:image" content="https://www.notion.so/signed/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F1f5f4850-63f2-4f5e-b486-960e6baf361f%2Ff02f690c-f73f-461d-a113-ad5c5a231655%2Ficons8-usb-connected-96.png?table=block&amp;id=1b5b6560-1781-42d4-a383-ceb0b7963055">
+  
+  <style>
+    .DateTagBar {
+      margin-top: 1.0rem;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="Navbar">
+  <a href="index.html">
+    <div class="Navbar__Btn">
+      
+        <span><img class="inline-img-icon" src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbfb3b00b-ef8d-464a-b169-436746190c7c%2Ficons8-home-page-100.png?table=collection&amp;id=43400acf-b977-49a1-bbad-916ca0cad551"></span>&nbsp;
+      
+      <span>Home</span>
+    </div>
+  </a>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <span class="Navbar__Delim">&centerdot;</span>
+      <a href="cv.html">
+        <div class="Navbar__Btn">
+          
+            <span><img class="inline-img-icon" src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fb9ec876c-9408-4df0-b3e0-22cd2072c987%2Ficons8-about-100.png?table=block&amp;id=0405a546-e9c6-49a9-8d6f-6843f2a9d7b9"></span>&nbsp;
+          
+          <span>Curriculum vitæ</span>
+        </div>
+      </a>
+    
+  
+    
+      <span class="Navbar__Delim">&centerdot;</span>
+      <a href="support.html">
+        <div class="Navbar__Btn">
+          
+            <span><img class="inline-img-icon" src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F1e1a86af-88dc-4883-8d5f-6562bd8f6c77%2Ficons8-coffee-to-go-96.png?table=block&amp;id=890569db-5250-4cf5-a730-f306445812aa"></span>&nbsp;
+          
+          <span>Me soutenir</span>
+        </div>
+      </a>
+    
+  
+    
+      <span class="Navbar__Delim">&centerdot;</span>
+      <a href="social.html">
+        <div class="Navbar__Btn">
+          
+            <span><img class="inline-img-icon" src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F474ed768-73ab-4f73-aeac-5753ff3b9622%2Ficons8-social-network-64.png?table=block&amp;id=331630ca-9957-4ecd-acb4-30bafa1eac23"></span>&nbsp;
+          
+          <span>Me retrouver ailleurs</span>
+        </div>
+      </a>
+    
+  
+    
+  
+</nav>
+  <header class="Header">
+    
+    <div class="Header__Spacer Header__Spacer--NoCover">
+    </div>
+    
+      <div class="Header__Icon">
+        <span><img class="inline-img-icon" src="https://www.notion.so/signed/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F1f5f4850-63f2-4f5e-b486-960e6baf361f%2Ff02f690c-f73f-461d-a113-ad5c5a231655%2Ficons8-usb-connected-96.png?table=block&amp;id=1b5b6560-1781-42d4-a383-ceb0b7963055"></span>
+      </div>
+    
+    <h1 class="Header__Title">Créer une clé USB Bootable de Windows sur Mac</h1>
+    
+      <div class="DateTagBar">
+        
+          <span class="DateTagBar__Item DateTagBar__Date">Posted on Mon, Jan 15, 2024</span>
+        
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--green">
+            <a href="tag/Tuto.html">Tuto</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--gray">
+            <a href="tag/Apple.html">Apple</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--pink">
+            <a href="tag/Windows.html">Windows</a>
+          </span>
+        
+      </div>
+    
+  </header>
+  <article id="https://www.notion.so/1b5b6560178142d4a383ceb0b7963055" class="PageRoot"><div id="https://www.notion.so/e79ce1c643a84a2493faef3fd8596fcd" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">Étape 1 :</strong></span><span class="SemanticString"> Cherchez et téléchargez le fichier .iso de Windows.</span></span></p></div><div id="https://www.notion.so/6066e606e24e4553a4c3e455e6887ae2" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">Étape 2 :</strong></span><span class="SemanticString"> Connectez votre clé USB à votre Mac. Assurez-vous qu&#x27;il y a plus de 8 Go d&#x27;espace libre.</span></span></p></div><div id="https://www.notion.so/17c0f4732e27449e8c8ceb97439baf5c" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">Étape 3 :</strong></span><span class="SemanticString"> Formatez la clé en utilisant l&#x27;utilitaire de disque et choisissez le format FAT32.</span></span></p></div><div id="https://www.notion.so/99a15452b29243c0ac5f01b860c3cce4" class="Image Image--PageWidth"><figure><a href="https://www.notion.so/signed/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F1f5f4850-63f2-4f5e-b486-960e6baf361f%2F11ea47df-8d97-49d2-8742-f11f258f079b%2FUntitled.png?width=1588.96875&amp;table=block&amp;id=99a15452-b292-43c0-ac5f-01b860c3cce4"><img src="https://www.notion.so/signed/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F1f5f4850-63f2-4f5e-b486-960e6baf361f%2F11ea47df-8d97-49d2-8742-f11f258f079b%2FUntitled.png?width=1588.96875&amp;table=block&amp;id=99a15452-b292-43c0-ac5f-01b860c3cce4" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div><div id="https://www.notion.so/c45184ac1e824a8996d8088b3c655ff0" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">Étape 4 :</strong></span><span class="SemanticString"> Lancez le Terminal et exécutez la commande : </span><span class="SemanticString"><code class="SemanticString__Fragment SemanticString__Fragment--Code">diskutil list</code></span><span class="SemanticString">.</span></span></p></div><pre id="https://www.notion.so/f5d9e455144c419ba4c1450ce2d4ebe2" class="Code"><code><span class="SemanticStringArray"><span class="SemanticString"><span>diskutil list
+</span></span></span></code></pre><div id="https://www.notion.so/4c12dfdbbc1d4819b38b9e024ab7875e" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">Étape 5 :</strong></span><span class="SemanticString"> Vous verrez une liste de disques. Trouvez le nom de votre clé USB. Il devrait apparaître comme </span><span class="SemanticString"><code class="SemanticString__Fragment SemanticString__Fragment--Code">/dev/diskX</code></span><span class="SemanticString">. Notez que </span><span class="SemanticString"><code class="SemanticString__Fragment SemanticString__Fragment--Code">X</code></span><span class="SemanticString"> représente le numéro de disque.</span></span></p></div><div id="https://www.notion.so/e5bc9dee28b945198a8b4b5d24a8bb34" class="Image Image--PageWidth"><figure><a href="#"><img src="#" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div><div id="https://www.notion.so/bfd1cf2f83fb400893e43ab5cde9a883" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">Étape 6 :</strong></span><span class="SemanticString"> Tapez la commande suivante :</span></span></p></div><pre id="https://www.notion.so/0082f69498734fcd8773cb40e2353d3b" class="Code"><code><span class="SemanticStringArray"><span class="SemanticString"><span>diskutil unmountDisk /dev/diskX
+</span></span></span></code></pre><div id="https://www.notion.so/974f0e16c92c4d8d873ed63ecf71b392" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">Étape 7 :</strong></span><span class="SemanticString"> Vous verrez un message indiquant : &quot;Unmount of all volumes on diskX was successful.&quot; Ensuite, tapez la commande suivante :</span></span></p></div><pre id="https://www.notion.so/2aa74d48e01b4c428a3c983ca4907fe2" class="Code"><code><span class="SemanticStringArray"><span class="SemanticString"><span>sudo dd if=/(le chemin de votre fichier iso)/of=/dev/diskX bs=1m
+</span></span></span></code></pre><div id="https://www.notion.so/e168d1405fbf4bb487f38920b42538d5" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Entrez ensuite votre mot de passe Mac. Tapez-le et appuyez sur &quot;Enter&quot;.</span></span></p></div><div id="https://www.notion.so/7a93b412891d4210af876250b46eec6d" class="Image Image--PageWidth"><figure><a href="https://www.notion.so/signed/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F1f5f4850-63f2-4f5e-b486-960e6baf361f%2F4b7731bf-6a5a-4e19-9e87-cbd1cb920c09%2FUntitled.png?width=1588.9375&amp;table=block&amp;id=7a93b412-891d-4210-af87-6250b46eec6d"><img src="https://www.notion.so/signed/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F1f5f4850-63f2-4f5e-b486-960e6baf361f%2F4b7731bf-6a5a-4e19-9e87-cbd1cb920c09%2FUntitled.png?width=1588.9375&amp;table=block&amp;id=7a93b412-891d-4210-af87-6250b46eec6d" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div><div id="https://www.notion.so/1d5e673665e1490fba01ec1b2f0661e2" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">Étape 8 :</strong></span><span class="SemanticString"> Au début, il se peut qu&#x27;aucun résultat ne s&#x27;affiche pendant un certain temps. En réalité, la commande est déjà en cours d&#x27;exécution. Patientez un moment et vous verrez finalement le nombre d&#x27;octets transférés s&#x27;afficher.</span></span></p></div><div id="https://www.notion.so/b98cd6d5cd174ea1b28b8ae6a355309a" class="Image Image--PageWidth"><figure><a href="#"><img src="#" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div><div id="https://www.notion.so/86ac4e9eca164616afd6f93b579a5e84" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">Étape 9 :</strong></span><span class="SemanticString"> Tapez la commande suivante :</span></span></p></div><pre id="https://www.notion.so/957b0779cf6b4d0cbbf4ac1b5f6f932e" class="Code"><code><span class="SemanticStringArray"><span class="SemanticString"><span>diskutil eject /dev/diskX
+</span></span></span></code></pre><div id="https://www.notion.so/b63b2936c24448fbbf5a1655f70fc5bc" class="Image Image--PageWidth"><figure><a href="#"><img src="#" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div><div id="https://www.notion.so/13e175b47f9146a2833de7163c1f7ba6" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Maintenant, retirez et réinsérez la clé USB. Vous devriez voir des fichiers et des dossiers, y compris un fichier autorun.inf et un setup.exe. Vous avez maintenant réussi à créer une clé USB bootable Windows.</span></span></p></div><div id="https://www.notion.so/11a971ced6e34b7e8f454da174052b37" class="Image Image--PageWidth"><figure><a href="https://www.notion.so/signed/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F1f5f4850-63f2-4f5e-b486-960e6baf361f%2F6a4f81f6-8ce6-4e1d-badb-6ae2d7c154be%2FUntitled.png?width=1588.984375&amp;table=block&amp;id=11a971ce-d6e3-4b7e-8f45-4da174052b37"><img src="https://www.notion.so/signed/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F1f5f4850-63f2-4f5e-b486-960e6baf361f%2F6a4f81f6-8ce6-4e1d-badb-6ae2d7c154be%2FUntitled.png?width=1588.984375&amp;table=block&amp;id=11a971ce-d6e3-4b7e-8f45-4da174052b37" style="width:100%"/></a><figcaption><span class="SemanticStringArray"></span></figcaption></figure></div></article>
+  <footer class="Footer">
+  <div>&copy; Le Blog de Robin F. 2022</div>
+  <div>&centerdot;</div>
+  <div>Powered by <a href="https://github.com/dragonman225/notablog" target="_blank"
+      rel="noopener noreferrer">Notablog</a>, <a href="https://icons8.com/" target="_blank"
+      rel="noopener noreferrer">icons8</a>.
+  </div>
+</footer>
+</body>
+
+</html>
