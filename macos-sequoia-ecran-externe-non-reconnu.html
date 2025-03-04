@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-151039022-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-151039022-1');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<!-- Chrome, Firefox OS and Opera Status Bar Color -->
+<meta name="theme-color" content="#FFFFFF">
+<meta name="google-site-verification" content="HhtuZBhPn1_ecmzPGbi3bTJXgC_c8WuAPqxkwsa3_IU" />
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css">
+<link rel="stylesheet" type="text/css"
+  href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/themes/prism.min.css">
+<link rel="stylesheet" type="text/css" href="css/SourceSansPro.css">
+<link rel="stylesheet" type="text/css" href="css/theme.css">
+<link rel="stylesheet" type="text/css" href="css/notablog.css">
+<!-- Favicon -->
+
+  <link rel="shortcut icon" href="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbfb3b00b-ef8d-464a-b169-436746190c7c%2Ficons8-home-page-100.png?table=collection&amp;id=43400acf-b977-49a1-bbad-916ca0cad551">
+
+<style>
+  :root {
+    font-size: 20px;
+  }
+</style>
+  <title>MacOS Sequoia : Quand ton écran externe disparaît… et comment le récupérer&nbsp;|&nbsp;Le Blog de Robin F.</title>
+  <meta property="og:type" content="blog">
+  <meta property="og:title" content="MacOS Sequoia : Quand ton écran externe disparaît… et comment le récupérer">
+  
+    <meta name="description" content="Comment refaire fonctionner un écran externe sous Mac OS Sequoi 15.X.X">
+    <meta property="og:description" content="Comment refaire fonctionner un écran externe sous Mac OS Sequoi 15.X.X">
+  
+  
+  <style>
+    .DateTagBar {
+      margin-top: 1.0rem;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="Navbar">
+  <a href="index.html">
+    <div class="Navbar__Btn">
+      
+        <span><img class="inline-img-icon" src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbfb3b00b-ef8d-464a-b169-436746190c7c%2Ficons8-home-page-100.png?table=collection&amp;id=43400acf-b977-49a1-bbad-916ca0cad551"></span>&nbsp;
+      
+      <span>Home</span>
+    </div>
+  </a>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <span class="Navbar__Delim">&centerdot;</span>
+      <a href="cv.html">
+        <div class="Navbar__Btn">
+          
+            <span><img class="inline-img-icon" src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fb9ec876c-9408-4df0-b3e0-22cd2072c987%2Ficons8-about-100.png?table=block&amp;id=0405a546-e9c6-49a9-8d6f-6843f2a9d7b9"></span>&nbsp;
+          
+          <span>Curriculum vitæ</span>
+        </div>
+      </a>
+    
+  
+    
+      <span class="Navbar__Delim">&centerdot;</span>
+      <a href="support.html">
+        <div class="Navbar__Btn">
+          
+            <span><img class="inline-img-icon" src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F1e1a86af-88dc-4883-8d5f-6562bd8f6c77%2Ficons8-coffee-to-go-96.png?table=block&amp;id=890569db-5250-4cf5-a730-f306445812aa"></span>&nbsp;
+          
+          <span>Me soutenir</span>
+        </div>
+      </a>
+    
+  
+    
+      <span class="Navbar__Delim">&centerdot;</span>
+      <a href="social.html">
+        <div class="Navbar__Btn">
+          
+            <span><img class="inline-img-icon" src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F474ed768-73ab-4f73-aeac-5753ff3b9622%2Ficons8-social-network-64.png?table=block&amp;id=331630ca-9957-4ecd-acb4-30bafa1eac23"></span>&nbsp;
+          
+          <span>Me retrouver ailleurs</span>
+        </div>
+      </a>
+    
+  
+    
+  
+</nav>
+  <header class="Header">
+    
+    <div class="Header__Spacer Header__Spacer--NoCover">
+    </div>
+    
+    <h1 class="Header__Title">MacOS Sequoia : Quand ton écran externe disparaît… et comment le récupérer</h1>
+    
+      <div class="DateTagBar">
+        
+          <span class="DateTagBar__Item DateTagBar__Date">Posted on Tue, Mar 4, 2025</span>
+        
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--green">
+            <a href="tag/Tuto.html">Tuto</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--gray">
+            <a href="tag/Apple.html">Apple</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--brown">
+            <a href="tag/Silicon.html">Silicon</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--yellow">
+            <a href="tag/macOS.html">macOS</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--red">
+            <a href="tag/M1.html">M1</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--default">
+            <a href="tag/M2.html">M2</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--pink">
+            <a href="tag/M3.html">M3</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--green">
+            <a href="tag/M4.html">M4</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--gray">
+            <a href="tag/Moniteur.html">Moniteur</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--red">
+            <a href="tag/Sequoia.html">Sequoia</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--brown">
+            <a href="tag/Bug.html">Bug</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--yellow">
+            <a href="tag/Fix.html">Fix</a>
+          </span>
+        
+          <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--gray">
+            <a href="tag/Display.html">Display</a>
+          </span>
+        
+      </div>
+    
+  </header>
+  <article id="https://www.notion.so/14ec0df1c6cf80cba435ff2784e321c4" class="PageRoot"><div id="https://www.notion.so/1acc0df1c6cf80748f2ed861e86dd1f8" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">J’ai récemment eu un souci bien agaçant avec mon </span><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">MacBook Pro M4 Pro</strong></span><span class="SemanticString"> sous </span><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">macOS Sequoia</strong></span><span class="SemanticString">. 
+Mon écran externe, branché en </span><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">Thunderbolt</strong></span><span class="SemanticString"> via un </span><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">dock CalDigit</strong></span><span class="SemanticString">, a soudainement décidé de ne plus être reconnu. Pourtant, il fonctionnait parfaitement la veille.</span></span></p></div><div id="https://www.notion.so/1acc0df1c6cf807385eef25fb2b9f480" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"></span></p></div><div id="https://www.notion.so/1acc0df1c6cf803aa666cca3a0f6afaa" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Si t’es dans le même cas, pas de panique ! Après quelques recherches (et plusieurs tentatives ratées), j’ai trouvé une solution qui marche.</span></span></p></div><h3 id="https://www.notion.so/1acc0df1c6cf802ba20ee71b37141247" class="ColorfulBlock ColorfulBlock--ColorDefault Heading Heading--3"><a class="Anchor" href="#https://www.notion.so/1acc0df1c6cf802ba20ee71b37141247"><svg width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><span class="SemanticStringArray"><span class="SemanticString">Le problème</span></span></h3><ul class="BulletedListWrapper"><li id="https://www.notion.so/1acc0df1c6cf801ea5cff8c19b35354b" class="BulletedList"><span class="SemanticStringArray"><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">L’écran externe n’est plus détecté</strong></span><span class="SemanticString">, comme s’il n’existait pas.</span></span></li><li id="https://www.notion.so/1acc0df1c6cf80618d75dde566ae2a84" class="BulletedList"><span class="SemanticStringArray"><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">macOS ne le voit même pas</strong></span><span class="SemanticString"> dans les préférences moniteur.</span></span></li><li id="https://www.notion.so/1acc0df1c6cf80c59c12dfb97f74f200" class="BulletedList"><span class="SemanticStringArray"><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">Redémarrer le Mac ou débrancher/rebrancher le câble ne change rien.</strong></span></span></li></ul><h3 id="https://www.notion.so/1acc0df1c6cf80bea753ca74e128a287" class="ColorfulBlock ColorfulBlock--ColorDefault Heading Heading--3"><a class="Anchor" href="#https://www.notion.so/1acc0df1c6cf80bea753ca74e128a287"><svg width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><span class="SemanticStringArray"><span class="SemanticString">La solution</span></span></h3><div id="https://www.notion.so/1acc0df1c6cf80f99195c9ae76050591" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Après avoir fouillé un peu partout, voici la méthode qui a fonctionné :</span></span></p></div><ol class="NumberedListWrapper"><li id="https://www.notion.so/1acc0df1c6cf808d8e15c7553d1760dd" class="NumberedList" value="1"><span class="SemanticStringArray"><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">Supprimer les préférences des écrans</strong></span></span><ul class="BulletedListWrapper"><li id="https://www.notion.so/1acc0df1c6cf802f8d45cee2a40e2a63" class="BulletedList"><span class="SemanticStringArray"><span class="SemanticString">Ouvre </span><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">Finder</strong></span><span class="SemanticString"> et va dans </span><span class="SemanticString"><code class="SemanticString__Fragment SemanticString__Fragment--Code">/Library/Preferences/</code></span></span></li><li id="https://www.notion.so/1acc0df1c6cf80f2a57efd43bd5d093c" class="BulletedList"><span class="SemanticStringArray"><span class="SemanticString">Trouve le fichier </span><span class="SemanticString"><code class="SemanticString__Fragment SemanticString__Fragment--Code">com.apple.windowserver.displays.plist</code></span></span></li><li id="https://www.notion.so/1acc0df1c6cf8021b730c2d12d63aca7" class="BulletedList"><span class="SemanticStringArray"><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">Supprime-le</strong></span><span class="SemanticString"> (au pire, fais une copie avant, histoire d’être tranquille).</span></span></li></ul></li><li id="https://www.notion.so/1acc0df1c6cf803bada4c9413d34a263" class="NumberedList" value="2"><span class="SemanticStringArray"><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">Redémarrer ton Mac</strong></span></span><ul class="BulletedListWrapper"><li id="https://www.notion.so/1acc0df1c6cf8027873ec0610aff1237" class="BulletedList"><span class="SemanticStringArray"><span class="SemanticString">Une fois le fichier supprimé, redémarre ton Mac.</span></span></li><li id="https://www.notion.so/1acc0df1c6cf807f88cdf5893b6ebd74" class="BulletedList"><span class="SemanticStringArray"><span class="SemanticString">Branche ton écran après le redémarrage, et normalement, </span><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">il devrait réapparaître</strong></span><span class="SemanticString">.</span></span></li></ul></li></ol></article>
+  <footer class="Footer">
+  <div>&copy; Le Blog de Robin F. 2022</div>
+  <div>&centerdot;</div>
+  <div>Powered by <a href="https://github.com/dragonman225/notablog" target="_blank"
+      rel="noopener noreferrer">Notablog</a>, <a href="https://icons8.com/" target="_blank"
+      rel="noopener noreferrer">icons8</a>.
+  </div>
+</footer>
+</body>
+
+</html>
